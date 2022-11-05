@@ -1,0 +1,21 @@
+1.Create a super market system using Java programming.
+
+2.Covid-19 management and analyser application using Java
+
+3. Create a food order application as link swiggy and use the following concepts
+
+1.Abstraction
+
+2.Encapsulation
+
+3.Methods
+
+4.Serialization or File System
+
+5.Regex
+
+6.Class Object
+
+7.HashMap
+
+8.MultiThreading

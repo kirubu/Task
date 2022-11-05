@@ -1,0 +1,50 @@
+1.Write a Java program to get the character at the given index within the String.
+2.Write a Java program to compare two strings lexicographically. Two strings are lexicographically equal if they are the same length and contain the same characters in the same positions.
+
+3.Write a Java program to compare two strings lexicographically, ignoring case differences
+
+4. Write a Java program to replace each substring of a given string that matches the given regular expression with the given replacement.
+
+Sample string : "The quick brown fox jumps over the lazy dog."
+
+In the above string replace all the fox with cat.
+
+Sample Output:
+
+Original string: The quick brown fox jumps over the lazy dog.                                                 
+
+New String: The quick brown cat jumps over the lazy dog.
+
+5.Write a Java program to find first non repeating character in a string.
+
+6.Write a Java program to divide a string in n equal parts.
+
+7.Write a Java program to check if two given strings are rotations of each other.
+
+Sample Output:
+
+The given strings are: ABACD  and  CDABA
+
+The concatenation of 1st string twice is: ABACDABACD
+
+The 2nd string CDABA  exists in the new string.
+
+Strings are rotations of each other
+
+ 
+
+8. Write a Java program to match two strings where one string contains wildcard characters.
+
+ 
+
+Sample Output:
+
+The given string is: abcdhgh
+
+The given pattern string is: abc*d?*
+
+The given pattern matches.
+
+9.Write a Java program to create a new string from a given string swapping the last two characters of the given string. The length of the given string must be two or more.
+
+10.Write a Java program to read two strings append them together and return the result. If the strings are different lengths, remove characters from the beginning of the longer string and make them equal length. 

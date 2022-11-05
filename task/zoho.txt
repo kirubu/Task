@@ -1,0 +1,1671 @@
+
+Pointers and Dynamic Memory Allocation
+Task-1
+Program to allocate memory at runtime for an array containing "welcome" and add '4' to the characters at even numbered location.
+Program to allocate memory for 10 integers and reallocate the same memory for 15 integers and store some integer data(may be positive or negative) and find the odd numbers and its position or index.
+Manipulate an array using pointers, where find out count of the prime numbers and its position stored in that array.
+
+Task 2
+(Additional Questions for day 2)
+(L1).Program to compare two strings using pointers.
+(L2).C program to search element in array using pointers.
+(L3).Access two dimensional arrays using pointers in C.
+
+Task 3
+Program to sum of two numbers using pointers.
+Program to find the maximum of two numbers using function pointers.
+Swap two numbers using function pointers.
+C program to input and print array elements using pointers.
+C program to copy one array to another using pointers.
+Write a program in C to print all permutations of a given string using pointers.
+Write a program in C to show the usage of pointer to the structure.
+Write a program in C to show a pointer to the union.
+
+To search an element in array using function pointers.
+To find length of string using function pointers.
+To copy one string to another using pointers.
+To concatenate two strings using pointers.
+To compare two strings using pointers.
+
+Evaluation
+Task-1
+To read data at the specified location till end.
+Program to read numbers from a file and write multiples of both 3 and 5 and prime numbers to separate file.
+Program to copy the data and add '3' to data at even location and display them.
+To create an Employee detail using structure and update the same in a file.
+Program to remove duplicate letters in a file.
+Program to count and remove all the comment lines in a "C" Program.
+To create a file and write data into file
+To read numbers from a file and write even, odd and prime numbers to separate files.
+To append content to a file.
+Program to find and replace a word in a text file.
+To remove a specific line from a text file.
+C program to rename a file using rename() function
+To find and replace a word in a text file.
+C program to check whether a file or directory exists or not
+C program to print source code of itself as output
+To replace a specific line with another text in a file.
+
+
+Explore and do if anything is not given in session
+
+Application 
+Set A
+Create a Library management system using C file system.It should follows the below scenarios,
+Display the front screen having two options 1. Books Issue 2.Books Return 
+After clicking the respective numbers it should move to the corresponding menu
+In Books issue:
+Get the inputs like Stud_name,Stud_Regno,Stud_Dept,No of books, Books ID, Issued date, returning date. Store those information on a file system 
+In Books Return page:
+Type the Register number (Stud_Regno) 
+It should display the information about the student like name, department,books issued, no of books, due date and due amount.
+After clicking returned option by admin or library manager the corresponding information about the student must be deleted. Then store the returned candidates information in the another file
+
+Set B
+Create an exam result generator system at University level application using C programming language. It should follows the below points. Make two interfaces one for student and another for coordinator
+For Coordinator
+He or she can login to their respective interface and mention the department.
+Enter the total number of students the enter their register number. Then mention the marks in the respective subjects for a respective semester. 
+Behind the scene the grade, result and GPA must be calculated and stored along with the student information in a separate file.
+For Student
+They have to enter their password and register number to login to their interface. After selecting the semester the result should be display along with the register number and  GPA.
+
+Day-1
+Task
+Write a program in C++ to input a single digit number and print a rectangular form of 5 columns and 5 rows.
+Write a program to read random numbers and find the summation of it, if the numbers are prime.
+Write a program in C++ to print the following pattern. 
+Program to find the Fibonacci series till the given number of terms.
+Functions
+Arrays, Structures and Union
+Pointers	
+Object-Oriented Programming concepts
+Class
+Object
+Encapsulation and Abstraction
+
+Day-5
+Task-1
+Write a program in C++ to input a single digit number and print a rectangular form of 5 columns and 5 rows.
+Write a program in C++ to print the following pattern. 
+Sample Output:
+  xxxxx                                                                                                        
+x          x         x        x                                                                                      
+x                     x        x                                                                                      
+x               xxxxxxx  xxxxxxx                                                                                   
+x                     x        x                                                                                      
+x          x         x        x                                                                                      
+  xxxxx  
+Program to find the Fibonacci series till the given number of terms.   
+
+Day-5
+Task-2
+Find the Factorial of a number even when the user is not provided input for n=5(default value).
+Find the Sum of two operands with various datatypes using function overloading.
+To find sum of 10 natural numbers using 1-D array.
+To search an element from an array by linear search method.
+To find the second largest number.
+To perform addition of two matrix.
+
+Use function pointer to find the following
+1. Cube of a number
+2. Power of a number x^n
+
+Use call by reference to print character for 8 times(change the formal argument by adding 3), actual argument value is 5. Also show up the reference variable value after changing the value, in main().
+10:40 AM
+Class
+Create a class called Arithmetic which contains two operands and perform all arithmetic operations on it.
+Create a class "Time" and read Time in terms of Hours, Minutes and Seconds and convert them into seconds.
+Create a class "Complex" and perform add and sub operations on two complex numbers and display them.
+Create a class "Distance" and add two Distance object and also convert the inches into feet if inches>12
+
+10:41 AM
+//Topics - class, Cbject, Abstraction and Encapsulation
+#include <iostream>
+using namespace std;
+class Student
+{
+    //private:
+        int rno;
+        string name;
+        float average;
+    public:
+        void read()
+        {
+            cout<<"\nRead the following details:";
+            cout<<"\nEnter the rno, name and average:";
+            cin>>rno>>name>>average;
+        }
+        void write();
+}s2;
+void Student::write() //defining a method outside the class
+{
+    cout<<"\nRno\tname\taverage\n";
+    cout<<rno<<"\t"<<name<<"\t"<<average;
+}
+
+int main()
+{
+    Student s;
+    s.read();
+    s.write();
+    return 0;
+}
+
+//Constructor
+#include <iostream>
+using namespace std;
+
+class Data
+{
+    int *x;
+    public:
+    Data() //Constructor
+    {
+        x=new int();
+        *x=0;
+    }
+    Data(int val){
+        x=new int();
+        *x=val;
+    }
+    //copy Constructor --> Shallow,
+    /*Data(Data &data)
+    {
+        x=data.x;
+    }*/
+    //copy Constructor --> Deep
+    Data(Data &data)
+    {
+        x=new int();
+        *x=*data.x;
+    }
+    void setx(int num)
+    {
+        x=new int();
+        *x=num;
+    }
+    int getx()
+    {
+        return *x;
+    }
+    void printx()
+    {
+        cout<<"\nx="<<*x;
+    }
+    ~Data() //Destructor
+    {
+        cout<<"\nObject destroyed!!!";
+    }
+};
+int main()
+{
+    Data d,d1(15),d2(d1),d3=d1; //d2(d1) and d3=d1 --> inovokes copy constructor
+    d.printx();
+    d.setx(10);
+    d.printx();
+    cout<<"\nIn main-->x="<<d.getx();
+    d1.setx(20);
+    d1.printx();
+    d2.printx();
+    d3.printx();
+    return 0;
+}
+12:54 PM
+//Inheritance
+#include <iostream>
+using namespace std;
+
+class A{
+    private:
+    int x;
+    protected:
+    int y;
+    public:
+    int z;
+    void print(){
+        cout<<"\nx="<<x<<"\ny="<<y<<"\nz="<<z;
+    }
+};
+
+class B:protected A{
+    public:
+    void read()
+    {
+        cout<<"\nRead the values of x,y and z:";
+        cin>>x;
+        cin>>y>>z;
+    }
+};
+
+int main(){
+    B b;
+    b.read();
+    b.print();
+    return 0;
+}
+01:08 PM
+//multiple Inheritance
+#include <iostream>
+using namespace std;
+
+class A{
+    int a;
+    public:
+    void seta(int val){
+        a=val;
+    }
+    int geta(){
+        return a;
+    }
+    void print(){
+        cout<<"\na="<<a;
+    }
+};
+
+class B{
+    int b;
+    public:
+    void setb(int val){
+        b=val;
+    }
+    int getb(){
+        return b;
+    }
+    void print(){
+        cout<<"\nb="<<b;
+    }
+};
+class C:public A,public B{
+    int x;
+    public:
+    void printx(){
+        //A::print();
+        //B::print();
+        x=geta()+getb();
+        cout<<"\nx="<<x;
+    }
+};
+int main(){
+    C c;
+    c.seta(10);
+    c.setb(20);
+    c.print();
+    c.print();
+    c.printx();
+    return 0;
+}
+01:27 PM
+//multiple Inheritance
+#include <iostream>
+using namespace std;
+
+class A{
+    int a;
+    public:
+    void seta(int val){
+        a=val;
+    }
+    int geta(){
+        return a;
+    }
+    void printa(){
+        cout<<"\na="<<a;
+    }
+};
+
+class B{
+    int b;
+    public:
+    void setb(int val){
+        b=val;
+    }
+    int getb(){
+        return b;
+    }
+    void printb(){
+        cout<<"\nb="<<b;
+    }
+};
+class C:public A,public B{
+    int x;
+    public:
+    void printx(){
+        x=geta()+getb();
+        cout<<"\nx="<<x;
+    }
+};
+int main(){
+    C c;
+    c.seta(10);
+    c.setb(20);
+    c.printa();
+    c.printb();
+    c.printx();
+    return 0;
+}
+01:28 PM
+Task-1-The mult.txt
+4.53 KBClick to preview
+Complete the task
+
+#include <iostream>
+using namespace std;
+void swap(int x, int y)
+{
+    cout<<"\nInteger Data:\n";
+    cout<<"\nBefore Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+    int temp;
+    temp=x;
+    x=y;
+    y=temp;
+    cout<<"\nAfter Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+}
+void swap(string x, string y)
+{
+    cout<<"\nString Data:\n";
+    cout<<"\nBefore Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+    string temp;
+    temp=x;
+    x=y;
+    y=temp;
+    cout<<"\nAfter Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+}
+void swap(char x, char y)
+{
+    cout<<"\nCharacter Data:\n";
+    cout<<"\nBefore Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+    char temp;
+    temp=x;
+    x=y;
+    y=temp;
+    cout<<"\nAfter Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+}
+void swap(float x, float y)
+{
+    cout<<"\nFloating-point Data:\n";
+    cout<<"\nBefore Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+    float temp;
+    temp=x;
+    x=y;
+    y=temp;
+    cout<<"\nAfter Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+}
+int main()
+{
+    swap(10,20);
+    swap('a','b');
+    swap(123.23f,345.45f);
+    swap("Hi","All");
+
+    return 0;
+}
+03:51 PM
+// return-type operator symbolorsign(){}
+#include <iostream>
+using namespace std;
+class Absolute{
+    int number;
+    public:
+    void read()
+    {
+        cout<<"\nRead a number:";
+        cin>>number;
+    }
+    //operator Function
+    void operator +()
+    {
+        if(number>0)
+            number=(1)*number;
+        else
+            number = (-1)*number;
+    }
+    void show()
+    {
+        cout<<"\nAbsolute value is "<<number;
+    }
+};
+int main()
+{
+    Absolute a;
+    a.read();
+    +a;
+    a.show();
+    return 0;
+}
+04:02 PM
+// return-type operator symbolorsign(){}
+#include <iostream>
+using namespace std;
+class Absolute{
+    int number;
+    public:
+    void read()
+    {
+        cout<<"\nRead a number:";
+        cin>>number;
+    }
+    //operator Function
+    Absolute operator +(Absolute ab)
+    {
+        Absolute tab;
+        tab.number=0;
+        tab.number=number+ab.number;
+        return tab;
+    }
+    void show()
+    {
+        cout<<"\nValue stored in number is "<<number;
+    }
+};
+int main()
+{
+    Absolute a,b,c;
+    a.read();
+    b.read();
+    c=a+b;  //c=a.operator(b);
+    a.show();
+    b.show();
+    c.show();
+    return 0;
+}
+04:10 PM
+//using friend function 
+#include <iostream>
+using namespace std;
+class Absolute{
+    int number;
+    public:
+    void read()
+    {
+        cout<<"\nRead a number:";
+        cin>>number;
+    }
+    //operator Function
+    friend Absolute operator +(Absolute ab,Absolute ac);
+
+    void show()
+    {
+        cout<<"\nValue stored in number is "<<number;
+    }
+};
+Absolute operator +(Absolute ab,Absolute ac)
+{
+    Absolute tab;
+    tab.number=0;
+    tab.number=ab.number+ac.number;
+    return tab;
+}
+int main()
+{
+    Absolute a,b,c;
+    a.read();
+    b.read();
+    c=a+b;  //c.operator(a,b);
+    a.show();
+    b.show();
+    c.show();
+    return 0;
+}
+04:14 PM
+//using friend class
+#include <iostream>
+using namespace std;
+class Absolute{
+    int number;
+    public:
+    void read()
+    {
+        cout<<"\nRead a number:";
+        cin>>number;
+    }
+    
+    friend class Access;
+
+    void show()
+    {
+        cout<<"\nValue stored in number is "<<number;
+    }
+};
+class Access{
+    public:
+    void display(Absolute a)
+    {
+        cout<<"\nInside friend class--->Value stored in number is "<<a.number;
+    }
+};
+int main()
+{
+    Absolute a;
+    //a.number=10;
+    Access axf;
+    a.read();
+    a.show();
+    axf.display(a);
+    return 0;
+}
+04:20 PM
+//using Inheritance
+#include <iostream>
+using namespace std;
+
+class A{
+    private: int x;
+    protected: int y;
+    public: int z;
+    public:
+    void read()
+    {
+        cout<<"\nRead x,y,z";
+        cin>>x>>y>>z;
+    }
+};
+
+class B:private A{
+    public:
+    void show()
+    {
+        cout<<"\nx="<<x;
+        cout<<"\ny="<<y;
+        cout<<"\nz="<<z;
+    }
+};
+int main()
+{
+    B b;
+    b.read();
+    b.show();
+    return 0;
+}
+04:33 PM
+//using Method Overriding
+#include <iostream>
+using namespace std;
+
+class Animal{
+    private: string type;
+    
+    public:
+    Animal()
+    {
+        cout<<"\nAnimal Constructor";
+    }
+    void read()
+    {
+        cout<<"\nRead type of animal:";
+        cin>>type;
+    }
+    
+    virtual void eat()
+    {
+        cout<<"\n"<<type<<" is eating.....";
+    }
+    void show()
+    {
+        cout<<"\n"<<type;
+    }
+};
+
+class Cat:public Animal{
+    public:
+    Cat()
+    {
+        cout<<"\nCat Constructor";
+    }
+    void eat()
+    {
+        cout<<"\nCat is eating.....";
+    }
+};
+int main()
+{
+    Animal a;
+    a.read();
+    a.eat();
+    a.show();
+    /*Cat c;
+    c.read();
+    c.eat();
+    c.show();*/
+    Animal *b=new Cat();
+    b->read();
+    b->eat();
+    b->show();
+    return 0;
+}
+04:47 PM
+//using Abstract class and pure virtual function
+#include <iostream>
+using namespace std;
+
+class Animal{
+    private: string type;
+    
+    public:
+    Animal()
+    {
+        cout<<"\nAnimal Constructor";
+    }
+    void read()
+    {
+        cout<<"\nRead type of animal:";
+        cin>>type;
+    }
+    
+    virtual void eat()=0;
+    
+    void show()
+    {
+        cout<<"\n"<<type;
+    }
+};
+
+class Cat:public Animal{
+    public:
+    Cat()
+    {
+        cout<<"\nCat Constructor";
+    }
+    void eat()
+    {
+        cout<<"\nCat is eating.....";
+    }
+};
+int main()
+{
+    /*Cat c;
+    c.read();
+    c.eat();
+    c.show();*/
+    Animal *b=new Cat();
+    b->read();
+    b->eat();
+    b->show();
+    return 0;
+}
+04:52 PM
+Polymorphism
+e.1	Compile-time Polymorphism
+e.2	Run-time Polymorphism
+Program to create an Abstract class called Animal, where write a pure virtual function area to find the implementation in their derived classes Cat and Dog.
+Write an operator function to perform post increment by 2.
+Write an operator function to find the difference of two date components.
+Write an operator function to add and convert the distance object into feet and inches.
+Write an operator function to add and subtract the two complex objects using friend functions.
+Illustrate an example for friend class.
+#include <iostream>
+#include <string>
+using namespace std;
+class Vehicle 
+{
+public: 
+void print() { cout << "Print: I am a vehicle. \n"; } 
+void display() { cout << "Display: I am a vehicle. \n"; } 
+}; 
+class Car: public Vehicle {
+public: 
+void print() { cout << "Print: I am a car.\n"; } 
+void display() { cout << "Display: I am a car. \n"; } 
+}; 
+int main() 
+{
+	Vehicle *v;
+	Car c; V = &c;
+	c.print();
+	c.display();
+	v->print();
+	v->display();
+	return 0;
+}
+Next, change the public member function print() in class Vehicle to virtual using the following statement: 
+virtual void print() { cout << "print: I am a vehicle. \n"; }
+Observe the output and explain the difference between the outputs of virtual function and non-virtual function. Explain the difference in the outputs.
+04:54 PM
+3 Feb
+Vishwak
+Good morning mam
+09:02 AM
+Monish Kanna
+Good morning mam
+09:02 AM
+Umamageswari D
+//User-defined exception
+#include <iostream>
+using namespace std;
+class Exception
+{
+ string msg;
+    public:
+    Exception(const string& str):msg(str)
+    {}
+    ~Exception(){
+ cout<<"\nObject destroyed!!!";
+    }
+
+ string getMessage() const
+    {
+        return msg;
+ }
+};
+
+int main()
+{
+    string s;
+    int length;
+ try{
+    cout<<"\nEnter the length of the string:";
+ cin>>length;
+    if(length<=0)
+ throw(Exception("Error-->Length of the string must be:>0"));
+ else{
+    cout<<"\nEnter the string:";
+ cin>>s;
+    }
+    }catch(Exception &e)
+    {
+ cout<<e.getMessage();
+    }
+    return 0;
+}
+12:26 PM
+Exception Handling
+Write a program that throws and catches an integer exception. Handle the exception and print its value.
+Write a program that can throw integer and double exceptions in the same try block. Implement the exception handling blocks for both exceptions.
+Program to throw the size and handle the exception when the user reads the size of an array as a negative value.
+Program to handle the exception when the power value of X^n is a negative value. i.e n is negative.
+Write a C++ program to accept an email address and throw an exception if it does not contain @ symbol.
+Write a C++ program to accept user name and password and throw an exception if the password has less than 8 characters or does not contain a digit.
+Program to prepare a message when any exception occurs.
+12:29 PM
+4 Feb
+Umamageswari D
+//Templates or Generic Programming
+#include <iostream>
+using namespace std;
+
+template<typename T>
+void Swap(T x,T y)
+{
+    T temp;
+    cout<<"\nBefore Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+    temp=x;
+    x=y;
+    y=temp;
+    cout<<"\nAfter Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+}
+
+int main()
+{
+    cout<<"\nInteger Data\n";
+    Swap(10,20);//Swap(int,int);
+    cout<<"\nCharacter Data\n";
+    Swap('a','c');
+    cout<<"\nFloatimg point Data\n";
+    Swap(10.43f,20.87f);
+    cout<<"\nString Data\n";
+    Swap("Hello","Zoho");
+
+    return 0;
+}
+11:18 AM
+//Templates or Generic Programming
+#include <iostream>
+using namespace std;
+
+template<class T>
+void printArray(T array[],int size)
+{
+    for(int i=0;i<size;i++)
+        cout<<array[i]<<"\t";
+}
+
+int main()
+{
+    cout<<"\nInteger Data\n";
+    int iarr[5]={1,2,3,4,5};
+    printArray(iarr,5);
+    cout<<"\nCharacter Data\n";
+    char carr[3]={'1','2','3'};
+    printArray(carr,3);
+    cout<<"\nFloatimg point Data\n";
+    float farr[2]={0.2f,3.45f};
+    printArray(farr,2);
+    cout<<"\nString Data\n";
+    string sarr[3]={"Monish","Arun","Parthiban"};
+    printArray(sarr,3);
+
+    return 0;
+}
+11:29 AM
+//Templates or Generic Programming
+#include <iostream>
+using namespace std;
+
+template<class T>
+void printArray(T *array,int size)
+{
+    for(int i=0;i<size;i++)
+        cout<<*(array+i)<<"\t";
+}
+
+int main()
+{
+    cout<<"\nInteger Data\n";
+    int iarr[5]={1,2,3,4,5};
+    printArray(iarr,5);
+    cout<<"\nCharacter Data\n";
+    char carr[3]={'1','2','3'};
+    printArray(carr,3);
+    cout<<"\nFloatimg point Data\n";
+    float farr[2]={0.2f,3.45f};
+    printArray(farr,2);
+    cout<<"\nString Data\n";
+    string sarr[3]={"Monish","Arun","Parthiban"};
+    printArray(sarr,3);
+
+    return 0;
+}
+11:30 AM
+//Templates or Generic Programming
+#include <iostream>
+using namespace std;
+
+template<class T,typename U, class Z>
+class Data{
+    T tdata;
+    U udata;
+    Z zdata;
+    public:
+    Data(T x,U y,Z z)
+    {
+        tdata=x;
+        udata=y;
+        zdata=z;
+    }
+    /*void printAbsData()
+    {
+        if(data<0)
+            data=(-1)*data;
+        else 
+            data=1*data;
+        cout<<"\nThe Absolute value of data is "<<data; 
+    }*/
+    void print()
+    {
+        cout<<"\nxdata= "<<tdata; 
+        cout<<"\nydata= "<<udata; 
+        cout<<"\nzdata= "<<zdata; 
+    }
+};
+
+int main()
+{
+    cout<<"\nInteger Data\n";
+    Data<int,string,float> d(3,"Zoho",12.34f);
+    //d.printAbsData();
+    d.print();
+    
+    cout<<"\nFloatimg point Data\n";
+    Data<float,char,int> f(-23.45f,'f',100);
+    //f.printAbsData();
+    f.print();
+    return 0;
+}
+11:46 AM
+Templates - Generic Programming
+Program to do the arithmetic operations using a class template.
+Program to swap two numbers/characters using a function template.
+Write a function template that takes a single type parameter (T) and accepts four function arguments: an array of T, a start index, a stop index (inclusive), and an optional initial value. The function returns the sum of all the array elements in the specified range and the initial value. Use the default constructor of T for the default initial value.
+Implement the Stack using a class template.
+Program to sum up all the numbers or characters (stored as string) using a function template.
+12:44 PM
+6 Feb
+ARUN
+This message has been deleted
+05:01 PM
+7 Feb
+Umamageswari D
+Good Morning All
+07:45 AM
+I will start the session by 11am
+07:45 AM
+ARUN
+okay mam
+10:10 AM
+Umamageswari D
+Have you all completed
+11:18 AM
+ARUN
+2 more questions are there mam
+11:19 AM
+Monish Kanna
+yet to complete mam
+11:19 AM
+Parthiban S S
+2 more questions to go mam
+11:19 AM
+Translate Message
+Umamageswari D
+Complete n let me know
+11:52 AM
+Parthiban S S
+okay mam
+11:52 AM
+ARUN
+okay mam
+11:52 AM
+Monish Kanna
+Okay mam
+11:52 AM
+Umamageswari D
+Constructors
+Destructors
+Inheritance ----> update the details Number of questions given and time taken to complete
+01:14 PM
+Day-11
+Polymorphism
+01:14 PM
+Day-12
+Exception Handling
+01:14 PM
+above is for Vishwak
+01:14 PM
+Day-9
+OOPs Concepts
+Class
+Object
+Abstraction
+Encapsulation
+
+Day-11
+Constructors
+Destructors
+Inheritance
+
+On Leave
+Day-12
+Constructors
+Destructors
+Inheritance
+
+Day-13
+Polymorphism
+Exception Handling Monish
+01:15 PM
+Day-9
+OOPs Concepts
+Class
+Object
+Abstraction
+Encapsulation
+
+On Leave
+Day-10
+Inheritance
+Polymorphism
+
+On Leave
+Day-11
+Constructors
+Destructors
+Templates
+01:16 PM
+For Arun and PArthiban
+01:16 PM
+Where r you guys
+06:14 PM
+Arun Parthiban Monish
+06:14 PM
+ARUN
+office mam
+06:14 PM
+Umamageswari D
+Let me start the session now
+06:15 PM
+Monish Kanna
+This message has been deleted
+06:15 PM
+office mam
+06:15 PM
+ARUN
+okay mam
+06:15 PM
+Monish Kanna
+sure mam
+06:15 PM
+Parthiban S S
+Umamageswari D
+7 Feb 06:15 PM
+Let me start the session now
+okay mam
+06:15 PM
+Umamageswari D
+Invite sent
+06:17 PM
+Translate Message
+//namespace
+#include <iostream>
+//using namespace std;
+namespace One{
+    //namespace Two{
+void print()
+{
+    std::cout<<"\nFirst print()";
+}
+}
+void print()
+{
+    std::cout<<"\nSecond print()";   
+}
+
+int main()
+{
+    std::cout<<"\nHello World";
+    One::print();
+    print();
+    return 0;
+}
+06:35 PM
+//nested namespace
+#include <iostream>
+//using namespace std;
+namespace One{
+    namespace Two{
+        namespace Three{
+void print()
+{
+    std::cout<<"\nFirst print()";
+}
+}
+}
+}
+void print()
+{
+    std::cout<<"\nSecond print()";   
+}
+
+int main()
+{
+    std::cout<<"\nHello World";
+    One::Two::Three::print();
+    print();
+    return 0;
+}
+06:37 PM
+//nested namespace
+#include <iostream>
+//using namespace std;
+namespace One{
+    namespace Two{
+        namespace Three{
+void print()
+{
+    std::cout<<"\nFirst print()";
+}
+}
+}
+}
+void print()
+{
+    std::cout<<"\nSecond print()";   
+}
+
+int main()
+{
+    std::cout<<"\nHello World";
+    namespace O123 = One::Two::Three; //creating alias name
+    O123::print();
+    print();
+    return 0;
+}
+06:39 PM
+//nested namespace
+#include <iostream>
+//using namespace std;
+namespace One{
+    namespace Two{
+        namespace Three{
+void print()
+{
+    std::cout<<"\nFirst print()";
+}
+}
+}
+}
+void print()
+{
+    std::cout<<"\nSecond print()";   
+}
+
+int main()
+{
+    std::cout<<"\nHello World";
+    namespace O123 = One::Two::Three; //creating alias name
+    print();
+    print();
+    return 0;
+}
+06:41 PM
+//nested namespace
+#include <iostream>
+//using namespace std;
+namespace One{
+    namespace Two{
+        namespace Three{
+void print()
+{
+    std::cout<<"\nFirst print()";
+}
+}
+}
+}
+void print()
+{
+    std::cout<<"\nSecond print()";   
+}
+
+int main()
+{
+    std::cout<<"\nHello World";
+    namespace O123 = One::Two::Three; //creating alias name
+    using namespace Two;
+    print();
+    print();
+    return 0;
+}
+06:42 PM
+//inline namespace
+#include <iostream>
+//using namespace std;
+namespace One{
+    namespace Two{
+        namespace Three{
+void print()
+{
+    std::cout<<"\nFirst print()";
+}
+}
+}
+}
+inline namespace Two{
+void print()
+{
+    std::cout<<"\nSecond print()";   
+}
+}
+int main()
+{
+    std::cout<<"\nHello World";
+    namespace O123 = One::Two::Three; //creating alias name
+    //using namespace Two;
+    print();
+    print();
+    return 0;
+}
+06:44 PM
+//anonymous namespace
+#include <iostream>
+//using namespace std;
+namespace One{
+    namespace Two{
+        namespace Three{
+void print()
+{
+    std::cout<<"\nFirst print()";
+}
+}
+}
+}
+namespace{
+void print()
+{
+    std::cout<<"\nSecond print()";   
+}
+}
+int main()
+{
+    std::cout<<"\nHello World";
+    namespace O123 = One::Two::Three; //creating alias name
+    //using namespace Two;
+    print();
+    print();
+    return 0;
+}
+06:46 PM
+//Vector
+#include <iostream>
+#include<vector>
+
+using namespace std;
+int main()
+{
+    vector<int> svector;
+    cout<<"\nThe Size of the Vector--->"<<svector.size();
+    cout<<"\nThe Capactiy of the Vector--->"<<svector.capacity();
+    
+    for(int i=0;i<1;i++)
+        svector.push_back(i+1);
+        
+    cout<<"\nThe Size of the Vector--->"<<svector.size();
+    cout<<"\nThe Capactiy of the Vector--->"<<svector.capacity();
+    
+    for(int i=0;i<5;i++)
+        svector.push_back(i+1);
+    
+    cout<<"\nThe Size of the Vector--->"<<svector.size();
+    cout<<"\nThe Capactiy of the Vector--->"<<svector.capacity();
+    
+    cout<<"\n";
+    vector<int>::iterator it;
+    for(it=svector.begin();it<svector.end();it++)
+        cout<<*it<<" ";
+    cout<<"\n";
+    
+    svector.insert(it,100);
+    for(it=svector.begin();it<svector.end();it++)
+        cout<<*it<<" ";
+        
+    svector.erase(it-1);
+    cout<<"\nAfter erasing\n";
+    
+    for(it=svector.begin();it<svector.end();it++)
+        cout<<*it<<" ";
+    
+    cout<<"\nReversing\n";
+    for(auto it=svector.rbegin();it<svector.rend();it++)
+        cout<<*it<<" ";
+        
+    cout<<"\nAfter clearing\n";
+    svector.clear();
+    for(it=svector.begin();it<svector.end();it++)
+        cout<<*it<<" ";
+        
+    
+    return 0;
+}
+07:12 PM
+8 Feb
+Umamageswari D
+Vector in STL
+Sort the set of integers read using vector.
+Find the maximum of all integers that you read using vector.
+Find the summation of all vector elements.
+Create a vector that stores a set of characters and find the similar characters.
+Create a vector that stores a set of characters and print them in reverse order by using rbegin() and rend() and also remove the duplicates.
+09:55 AM
+Namespace
+Write a code to use fully-qualified namespaces.
+Write a code to use unnamed namespaces.
+Illustrate with an example using the same print().
+Program to create alias name for the namespace.
+09:55 AM
+Arun n Parthiban be ready by 11.45am
+11:39 AM
+Parthiban S S
+okay mam
+11:39 AM
+ARUN
+okay mam
+11:39 AM
+Umamageswari D
+Q3 Started : 4.43
+Q3 End: 4:49
+like this
+04:43 PM
+You follow
+04:43 PM
+ARUN
+okay mam
+04:49 PM
+Parthiban S S
+okay mam
+04:49 PM
+9 Feb
+Vishwak
+Good morning mam
+09:00 AM
+Monish Kanna
+Good morning
+09:50 AM
+ARUN
+Good morning mam
+09:50 AM
+Umamageswari D
+GM Guys
+09:51 AM
+Be ready guys
+12:15 PM
+Vishwak
+ok mam
+12:24 PM
+Umamageswari D
+//File operations in C++
+#include <fstream>
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    ofstream ofs;
+    ofs.open("sample.txt");
+    ofs<<"Welcome to learn C++ File Concepts!!!";
+    ofs.close();
+    return 0;
+}
+12:45 PM
+//File operations in C++
+#include <fstream>
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    ifstream ifs;
+    ifs.open("main.cpp",ios::in);
+    char ch;
+    //ifs.seekg(-200,ios::end);
+    cout<<"\nFPtr is "<<ifs.tellg()<<"\n";
+    while(ifs.get(ch))
+    {
+        cout<<ch;
+    }
+    cout<<"\nFPtr is "<<ifs.tellg()<<"\n";
+    ifs.close();
+    return 0;
+}
+01:06 PM
+//To write and read an object to/from a file
+#include<iostream>
+#include<fstream>
+using namespace std;
+class Person
+{
+	char Name[15];
+	int Age;
+	public:
+	void setData(){
+		cout<<"\nEnter Name:"<<endl;
+		cin.getline(Name,15);
+		cout<<"\nEnter Age:"<<endl;
+		cin>>Age;
+	}
+	void showData(){
+		cout<<"\nName:"<<Name<<endl;
+		cout<<"\nAge:"<<Age<<endl;
+	}
+};
+
+int main()
+{
+	ofstream outfile;
+	outfile.open("file1.txt");
+	Person p;
+	p.setData();
+	outfile.write((char*)&p,sizeof(p));
+	outfile.close();
+	ifstream infile;
+	infile.open("file1.txt");
+	infile.read((char*)&p,sizeof(p));
+	p.showData();
+	infile.close();
+}
+01:11 PM
+Using Files
+To merge two files to third File.
+To encrypt and decrypt Files.
+To read and write values through Book object.
+To count digits, alphabets & spaces and display all the count.
+To count words, lines and total size.
+To count the occurrence of specified word.
+To read and write Product details using binary files.
+C++ program to manipulate file pointers.
+01:15 PM
+Strings
+01:16 PM
+Strings
+Program to change the case of the character when the characters are same.
+	Input: 1. Happy	
+           2. Program
+	Output: 1. HaPPy  
+             2. PRogRam
+Program to change every letter in a given string with the letter following it in the alphabet (ie. a becomes b, p becomes q, z becomes a).
+	Input: Lazy
+	Output: Mbaz
+Program to check whether the characters b and d are separated by exactly 3 places anywhere in a given string at least once.
+	Input: bold
+	Output: bold -> 1
+Program to read a string containing all type of data like integer data, special characters and alphabets and place them in the corresponding type of array. Note: Don't count for spaces.
+	Example. Welcome to learn C++ 14 and 17!!!. 
+	let symbol array be sp_ch[]={+,+,!,!,!,.}
+	Integer array be in[]={14,17}
+character array be  ch[]={W,e,l,c,o,e,m,t,o,l,e,a,r,n,C,a,n,d}
+01:16 PM
+//file operations
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ofstream ofs;
+    ofs.open("sample.txt",ios::out|ios::app);
+    ofs<<"Hello Parthiban, Welcome to learn C++ File concepts!!!";
+    ofs.close();
+    ifstream ifs;
+    char ch;
+    ifs.open("sample.txt");
+    while(ifs.get(ch))
+    {
+        cout<<ch;
+    }
+    ifs.close();
+    return 0;
+}
+03:52 PM
+//file operations - random access
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ofstream ofs;
+    ofs.open("sample.txt",ios::out|ios::app);
+    ofs<<"Hello Parthiban, Welcome to learn C++ File concepts!!!\n";
+    ofs.close();
+    ifstream ifs;
+    char ch;
+    ifs.open("sample.txt");
+    ifs.seekg(10,ios::beg);
+    cout<<"\nCurrent Position is "<<ifs.tellg()<<"\n";
+    while(ifs.get(ch))
+    {
+        cout<<ch;
+    }
+    cout<<"\nCurrent Position is "<<ifs.tellg()<<"\n";
+    ifs.close();
+    return 0;
+}
+03:56 PM
+Yesterday
+Umamageswari D renamed the chat as #Batch-4
+Vishwak
+Good morning mam
+09:02 AM
+Umamageswari D
+Good Morning Guys
+09:36 AM
+Monish Kanna
+good morning mam
+09:36 AM
+Parthiban S S
+Good morning mam
+09:37 AM
+Monish Kanna
+This message has been deleted
+10:38 AM
+Umamageswari D
+//function overloading
+#include <iostream>
+using namespace std;
+void Swap(int x,int y)
+{
+    int temp;
+    cout<<"\nBefore Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+    temp=x;
+    x=y;
+    y=temp;
+    cout<<"\nAfter Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+}
+void Swap(string x,string y)
+{
+    string temp;
+    cout<<"\nBefore Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+    temp=x;
+    x=y;
+    y=temp;
+    cout<<"\nAfter Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+}
+void Swap(float x,float y)
+{
+    float temp;
+    cout<<"\nBefore Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+    temp=x;
+    x=y;
+    y=temp;
+    cout<<"\nAfter Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+}
+void Swap(char x,char y)
+{
+    char temp;
+    cout<<"\nBefore Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+    temp=x;
+    x=y;
+    y=temp;
+    cout<<"\nAfter Swapping:\n";
+    cout<<"x="<<x<<" and y="<<y;
+}
+
+int main()
+{
+    cout<<"\nInteger Data\n";
+    Swap(10,20);//Swap(int,int);
+    cout<<"\nCharacter Data\n";
+    Swap('a','c');
+    cout<<"\nFloating point Data\n";
+    Swap(10.43f,20.87f);
+    cout<<"\nString Data\n";
+    Swap("Hello","Zoho");
+
+    return 0;
+}
+04:23 PM
+This message has been deleted
+05:23 PM
+Today
+Umamageswari D
+Good Morning Guys
+08:52 AM
+Vishwak
+Good morning mam
+08:55 AM
+Umamageswari D
+Developing Applications using C++ Concepts
+Task-1
+Create a simple library management application using C++ programming it should contain Inheritance, Encapsulation and Abstraction. use vectors and templates if you need. 
+Task-2
+Create an arithmetic calculator using polymorphism
+Task-3
+Implement a class called String and has two data member str and length and perform the following operations?
+Note: without using string handling built-in functions
+Find the length of the string.
+Concatenate two string objects using operator overloading.
+Compare two strings. Write an operator function.
+Find the reverse of the string.
+Find the index of the specified character.
+Separate the characters from odd and even-indexed locations and display them.
+Find the substring by reading the starting index and number of characters from the user.
+Remove all the duplicates.
+Find the count of specified character.
+Find each occurrences of each character from the string.
+Insert a character at the specified location.
+Task-4
+Your code should contain modularity
+Use appropriate comments 
+Use any data structure you want.
+Create a contact management system using C++ programming. It must follow the below conditions,
+Clear a screen and make an option on the screen like call, search contact,delete contact, update contact etc.
+Add the validation for the mobile number, if it goes beyond 10 digits throw an exception.
+Also create stack to store the history of calls for 5 contacts. 
+Once you choose to call,
+Next it should ask for the mobile number and you have to enter it.
+If the particular contact number exists you can able to make a call and print a message called "Speaking to the contact number"
+Here use time structure of ctime(available in C) to note the calling time and the call end time, find the duration of the call and display.
+After completing the call make a count respect to the contact number in the structure or an array.
+Once you choose to edit the details,
+Change the contact number or company name and store in a structure or an array.
+Once you choose get the phone call history it should display the count details of the particular phone number.
+Once you choose to delete a number it must delete the number and company details and prints a message on screen called "contact number deleted".
+09:03 AM
+Vishwak let me know when you will complete the namespace preparation
+09:07 AM
+Parthiban S S
+good morning mam
+09:59 AM
+ARUN
+good morning mam
+10:01 AM
+Monish Kanna
+good morning mam
+10:07 AM
+Umamageswari D
+I am WFH today
+10:10 AM
+Monish Kanna
+Okay mam
+10:10 AM
+ARUN
+okay mam
+10:10 AM
+Umamageswari D
+Vishwak is present or absent today
+11:48 AM
+No  response from him
+11:49 AM
+but he placed one GM here today morning
+11:49 AM
+Vishwak
+Umamageswari D
+Today 11:48 AM
+Vishwak is present or absent today
+Present mam
+11:49 AM
+Umamageswari D
+Today 11:49 AM
+but he placed one GM here today morning
+Sry mam I didn't saw the message mam
+11:50 AM
+Umamageswari D
+Today 09:07 AM
+Vishwak let me know when you will complete the namespace preparation
+I will complete it by today evening mam
+11:50 AM
+Actions
+No file chosen

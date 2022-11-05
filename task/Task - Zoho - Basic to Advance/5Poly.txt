@@ -1,0 +1,6 @@
+1.Write a program for dynamic binding and static binding in Java
+2.Can we prevent overriding? if yes code it and explain it
+
+3.Can we prevent overloading? if yes code it and explain it
+
+4.Write a simple ticket booking system using polymorphism in Java

@@ -1,0 +1,19 @@
+Write a program to illustrate how to throw an exception.
+
+Write a program using try and catch block where check whether the given array size is negative or not.
+
+Write a program to illustrate how to use multiple catch statements.
+
+Write a program to illustrate sub class exception precedence over base class.
+
+Write a program to illustrate usage of try/catch with finally clause.
+
+Write a program to describe the usage of throws clause.
+
+Write a program for creation of user defined exception.
+
+Write a program to illustrate how to throw an ArrayOutOfBoundException.
+
+Write a program to illustrate how to throw a ClassNotFoundException.
+
+Write a program to illustrate how to throw a NumberFormatException.

@@ -1,0 +1,115 @@
+Problem 1:
+
+Create template called as Flim is started below. An instance of class Film represents a movie. This class
+has the following three instance variables:
+title, which is a String representing the title of the film
+production, which is a String representing the studio that made the movie
+rating, which is a String representing the rating of the movie (i.e. PG­13, R, etc)
+	public class Film {
+		private String title;
+		private String production;
+		private String rating;
+		// your code goes here
+
+a) Write a constructor for the class Film, which takes a String representing the title of the movie, a String representing the production, and a String representing the rating as its arguments, and sets the respective class variables to these values.
+
+b) Write a second constructor for the class Film, which takes a String representing the title of the movie and a String representing the production as its arguments, and sets the respective class variables to these values, while the class variable rating is set to "PG".
+
+c) Write a method getPGRating, which takes an array of base type Film as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Film instances. The returned array need not be full.
+
+d) Write a piece of code that creates an instance of the class Film with the title “Valimai”, the production “Zee Studios”, and the rating “PG­13”
+
+e) Write an implementation class to test the Film class.
+
+
+Problem 2:
+
+BANK APPLICATION 
+================
+Write an application for banking. Give choices to the user that what type of account they want to create and create account accordingly.
+
+User--> creates account- two types--> savings acct,salary acct
+
+If user wants to Create Savings account:
+-----------------------
+Get the following details from the user and create an object accordingly
+--------
+name
+dob
+age
+email id
+phone num
+pan number
+aadhar num
+min balance
+
+Once the account is created .. Display the following the message
+
+Hold on,we are generating your account id
+Your savings account is created,your account id is:xxxxxxxxx(random).
+Thanks for Banking with us.!
+
+--------------------------
+If user wants to create Salary account:
+------------------------------
+Get the following details from the user and create an object accordingly
+------------------------------
+name
+dob
+age
+email id
+employee id
+company name
+phone num
+pan number
+aadhar num
+
+Once the account is created .. Display the following the message
+
+You salary account is created,your account id is:xxxxxxxxx(random).
+Thanks for Banking with us.!
+-----------------------------
+
+
+Transaction Details
+==============
+Adding money
+View Balance
+Withdraw money
+
+------------------
+Adding money:
+----------------
+Please enter your account id:
+account id needs to be verified
+if correct:
+ENter the amount:xxx
+Check amount is multiples of 100, if yes update the balance and display the following message
+	Your account has been credited with xxx and your balance is xxxxx.
+if not display appropriate message
+
+if account is not correct:
+Incorrect account id
+
+==================
+
+View Balance:
+---------------
+Please enter your account id:
+account id needs to be verified
+if correct:
+Your account balance is:xxxxx
+if account is not correct:
+Incorrect account id
+
+====================
+Withdraw money:
+---------------
+Please enter your account id:
+account id needs to be verified
+if correct:
+ENter the amount:xxx
+the amount needs to be verified
+Your account has been debited with xxx and your balance is xxxxx.
+if account is not correct:
+Incorrect account id

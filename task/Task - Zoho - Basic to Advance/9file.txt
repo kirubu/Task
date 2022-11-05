@@ -1,0 +1,13 @@
+Write a program to show how to read and write a file.
+
+Write a program to create a text file in the path c:\java\abc.txt and check whether that file is exists. Using the command exists(), isDirectory(), isFile(), getName() and getAbsolutePath().
+
+Write a program to rename the given file, after renaming the file delete the renamed file. (Accept the file name using command line arguments.)
+
+Write a program to create a directory and check whether the directory is created.
+
+Write a program to create a file and write data into it using the methods OutputStream class.
+
+Write a program to accept a specified number of characters as input and converts them into uppercase characters.
+
+Write a program to get the input from the user and store it into file. Using Reader and Writer file.

@@ -1,0 +1,19 @@
+Task 2(Classes, Objects, Inner classes)
+
+1.Create a class named 'Student' with String variable 'name' and integer variable 'roll_no'. Assign the value of roll_no as '2' and that of name as "John" by creating an object of the class Student.
+
+2.Write a program to print the area of two rectangles having sides (4,5) and (5,8) respectively by creating a class named 'Rectangle' with a method named 'Area' which returns the area and length and breadth passed as parameters to its constructor.
+
+3. Write a program that would print the information (name, year of joining, salary, address) of three employees by creating a class named 'Employee'. The output should be as follows:
+
+Name        Year of joining        Address
+
+Robert            1994                64C- WallsStreat
+
+Sam                2000                68D- WallsStreat
+
+John                1999                26B- WallsStreat
+
+4.Print the average of three numbers entered by user by creating a class named 'Average' having a method to calculate and print the average.
+
+5.Assign and print the roll number, phone number and address of two students having names "Sam" and "John" respectively by creating two objects of class 'Student'.

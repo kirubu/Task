@@ -1,0 +1,350 @@
+1.TreeMap
+-----------
+
+
+
+To assist Event organizers, you need to develop a console application that shows the number of 
+tickets sold in a particular price category. Thus enabling them to increase or decrease seats 
+allocated for different price levels and thereby boosting ticket sales. 
+The list of booking details that contains customer and price details is given. 
+
+
+Use TreeMap with price as key and number of seats booked as value.
+
+Consider a driver class named Main. In the main method, obtain details and display the price along with the number of tickets in increasing order of price.
+
+ 
+
+Input Format:
+
+
+The first line of the input corresponds to the number of events 'n'.
+The next 'n' line of inputs corresponds to the event details in CSV format (Customer Name, Ticket Price, No of Seats Booked).
+Refer to Sample Input and Output for formatting specifications.
+
+Output Format:
+
+The output consists of the number of tickets booked for a particular ticket price in increasing order of price.
+Use ("%-15s %s\n","Ticket Price","Tickets Booked") for the format.
+Refer to Sample Input and Output for formatting specifications.
+
+Sample Input and Output :
+[All Texts in bold corresponds to the input and rest are output]
+
+Enter the number of events:
+3
+Enter event details in CSV(Customer Name,Ticket Price,No of Seats Booked)
+Emily,100,5
+Natalie,200,10
+Grace,100,3
+Ticket Price    Tickets Booked
+100                 8
+200                 10
+2.Comparable Interface
+--------------------
+
+Given the list of Address details, sort them based on Pincode. If two address has the same Pincode, 
+then sort them based on address line 1. 
+Write a program to sort the users based on Pincode when certain details (City and state details) 
+are unavailable.
+
+Strictly adhere to the Object-Oriented specifications given in the problem statement. 
+All class names, attribute names, and method names should be the same as specified in the problem 
+statement.
+
+
+Consider the class Address with the following private attributes
+
+Attributes	Datatype
+username	String
+addressLine1	String
+addressLine2	String
+pinCode	Integer
+Include appropriate getters and setters
+Create default constructor and a parameterized constructor with arguments in order
+Address(String username, String addressLine1, String addressLine2, Integer pinCode).
+
+The Address class implements the comparable interface. Compare Pincode, 
+If Pincode is the same then compare with addressLine1.
+
+Consider the class Main to test the above class. 
+Obtain input from the console and sort the user list based on pincode.
+
+
+
+The first line input corresponds to the number of users 'n'.
+The next 'n' line of inputs corresponds to the user details in CSV format(Username,AddressLine 1,
+AddressLine 2,PinCode).
+
+
+Output Format:
+
+The output consists of user details in the CSV format in sorted order. 
+Print the output in the main method.
+
+Enter the number of users:
+3
+Enter user address in CSV(Username,AddressLine 1,AddressLine 2,PinCode)
+Martin,Avocado Ave,Newport Beach,92660
+Justin,Beachwalk,Honolulu,96815
+Josh,Wailea Drive,Kihei,96753
+User Details:
+Martin,Avocado Ave,Newport Beach,92660
+Josh,Wailea Drive,Kihei,96753
+Justin,Beachwalk,Honolulu,96815
+
+
+
+
+
+3. Reverse() method
+-----------------
+ 
+In the collection, the sort() method sorts the objects in ascending order. Suppose if we want to sort
+ the list of objects in descending order, we can use the reverse() method. 
+Write a program to implement the reverse() method along with sort() to sort the list of User objects
+ in descending order.
+
+Strictly adhere to the Object-Oriented specifications given in the problem statement. 
+All class names, attribute names, and method names should be the same as specified in the 
+problem statement.
+
+Consider a class User with the following private attributes,
+Attribute	Data type
+name	        String
+mobileNumber	String
+username	String
+password	String
+
+Include appropriate getters and setters, default constructor, and parameterized constructor.
+
+Override toString() and print the details in a tabular format.
+
+Implement Comparable and sort the user objects based on name and reverse it by using the reverse().
+
+Consider a driver class Main and using the main method get the details, 
+create a map, and display the details.
+
+Note:
+
+Sort the user details based on the name of the user.
+
+
+Input format:
+
+The first line of input consists of a number of users n.
+The next n line of input consists of user details in the CSV format (name, mobileNumber, userName, password).
+
+Output format:
+
+Display the name and the mobile number of the user in the reverse order.
+Use "%-15s%-15s" to display details in tabular format.
+
+
+Enter the number of users:
+3
+Enter the details of User 1
+Jack,12345,Jack,Jack
+Enter the details of User 2
+Jane,13579, Jane, Jane
+Enter the details of User 3
+John,24680, John, John
+The user details in reverse order:
+Name           Mobile number  
+John           24680          
+Jane           13579          
+Jack           12345
+
+4. contains()
+Write a program to iterate a list of object, and display the details based on condition using 
+iterator class
+
+Strictly adhere to the Object-Oriented specifications given in the problem statement. 
+All class names, attribute names, and method names should be the same as specified in the 
+problem statement.
+
+Consider a class Stall with the following private attributes.
+
+Attributes	Datatype
+name		String
+detail		String
+type		String
+ownerName	String
+
+Include getters and setters.
+Create  default and Parameterized constructors.
+Format for the parameterized constructor is Stall(String name, String detail, String type, 
+String ownerName)
+
+Consider a driver class called Main. In the Main method, obtain stall input from the user
+ and create a list of Stall details. Using the Iterator class iterate through the List and 
+remove stalls with a name starting with 'test'.
+Display the list of details in tabular form.
+
+
+
+Input format:
+
+The first line consists of the number of stalls 'n'
+The next 'n' line consists of 'n' stall details given in CSV format. (name, detail,type,ownerName)
+
+Output format:
+
+The first line of output displays the heading of the stall details. 
+Then the stall details without containing the prefix 'test' are displayed in tabular format
+Use ("%-15s %-20s %-15s %s") for formatting 
+Refer to the sample Input and Output for further details and for the formatting specifications.
+
+Sample Input and Output:
+
+[All text in bold corresponds to the input and rest corresponds to the output]
+
+Enter the number of stall details
+5
+Enter the stall 1 detail
+test1, detail, type, johndoe
+Enter the stall 2 detail
+test2, detail1, type, janedoe
+Enter the stall 3 detail
+Food court, fruits and juice, food, Edwin
+Enter the stall 4 detail
+Book, novels, sale, Alexa
+Enter the stall 5 detail
+test, data, data, data
+Name            Detail               Type            Owner name
+Food court      fruits and juice     food            Mahesh
+Book            novels               sale            Rajesh
+
+5. Email Search
+---------------
+
+In this problem experiment with containsAll() method. Write a program to search all the email 
+addresses which are given in CSV format.
+
+Consider the Main class. Obtain email addresses from the user and add them to a Set. 
+At last, get a String that has multiple email addresses in CSV format. 
+Print "Email addresses are present" if all email addresses are present in the Set,
+ else print "Email addresses are not present".
+
+Input and Output format:
+
+Refer to sample Input and Output for formatting specifications.
+
+Note: All Texts in bold corresponds to the input and the rest are output
+
+
+Sample Input and Output 1:
+
+Enter Email address
+Merry@gmail.com
+Do you want to Continue?(yes/no)
+yes
+Enter Email address
+Peter@yahoo.com
+Do you want to Continue?(yes/no)
+yes
+Enter Email address
+Christian@hotmail.com
+Do you want to Continue?(yes/no)
+yes
+Enter Email address
+Merry@gmail.com
+Do you want to Continue?(yes/no)
+no
+Enter the email addresses to be searched separated by comma
+Merry@gmail.com,Peter@yahoo.com
+Email addresses are present
+
+
+Sample Input and Output 2:
+
+Enter Email address
+Amelia@yahoo.com
+Do you want to Continue?(yes/no)
+yes
+Enter Email address
+Elizabeth@google.co.in
+Do you want to Continue?(yes/no)
+no
+Enter the email addresses to be searched separated by comma
+Elizabeth@google.co.in,jeryy@gmail.com
+Email addresses are not present
+
+
+
+6. Write a program to take hall objects as input in the list and sort them in the order of their 
+costPerDay using the sort() method of the comparable interface. Then display them in tabular form.
+
+Strictly adhere to the Object-Oriented specifications given in the problem statement. All class names, attribute names, and method names should be the same as specified in the problem statement.
+
+Consider the class Hall with the following private attributes,
+
+Attribute	Data type
+name	String
+contactNumber	String
+costPerDay	Double
+ownerName	String
+ 
+
+Include appropriate getters and setters.
+Prototype for the Parameterized Constructor, Hall (name,contactNumber,costPerDay,ownerName).
+
+Override toString() and print the details in a tabular format. And implement the comparable 
+interface in the class.
+
+Consider the class Main and use the main method to get inputs, sort, and display.
+
+
+
+Input Format:
+
+The first line has the number of halls n.
+The next n lines have details of the hall in CSV format.
+
+Output format:
+
+Use "%-15s%-15s%-15s%-15s" to display the hall details in the sorted order based on the cost per day as in tabular form.
+All the double values should be displayed upto 1 decimal place.
+Refer to sample input and output for other further details and format of the output.
+
+Note: All Texts in bold corresponds to the input and the rest are output.
+
+Sample Input and Output 1:
+
+Enter the number of halls:
+3
+Enter the details of hall 1
+SDH hall,12345,12000,Jane
+Enter the details of hall 2
+SRT hall,13579,20000,John
+Enter the details of hall 3
+XUV hall,24680,15000,Jack
+Sorted Order (from the least expensive to the most):
+Name           Contact number Cost per day   Owner name     
+SDH hall       12345          12000.0        Jane           
+XUV hall       24680          15000.0        Jack           
+SRT hall       13579          20000.0        John   
+
+Sample Input and Output 2:
+
+Enter the number of halls:
+4
+Enter the details of hall 1
+ABC hall,12345,13000,John
+Enter the details of hall 2
+STR hall,13579,25000,Jane
+Enter the details of hall 3
+DFG hall,24680,10000,Jack
+Enter the details of hall 4
+JKL hall,67890,20000,Joe
+Sorted Order (from the least expensive to the most):
+Name           Contact number Cost per day   Owner name     
+DFG hall       24680          10000.0        Jack           
+ABC hall       12345          13000.0        John           
+JKL hall       67890          20000.0        Joe            
+STR hall       13579          25000.0        Jane       
+
+
+
+
+

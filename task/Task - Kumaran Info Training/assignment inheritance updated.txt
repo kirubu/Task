@@ -1,0 +1,400 @@
+Q1)Inheritance - Booking Tickets
+
+ 
+
+Whether you fly for business or leisure purposes, you can choose either private jets or
+ commercial airlines to get from point A to point B. 
+
+The task is to get the flight details and display them. Write a Java program to Implement this task. 
+
+Consider a class Aircraft
+
+Include the following protected data members/attributes: 
+
+Data Type	Variable Name 
+String	aircraftName 
+String	source
+String	destination
+Include getters/ setters. 
+
+Include the following public methods
+
+Prototype for the Parameterized Constructor, 
+
+public Aircraft(String aircraftName,String source,String destination) 
+ 
+
+Include the following method.
+
+Method Name	Description
+void display()	The return type of this method is void, this method prints the details of the Aircraft
+ 
+
+Consider a class PublicAircraft that extends Aircraft
+
+Include the following private attributes/data members: 
+
+Data Type	Variable Name 
+Boolean	checkInBeforeTwoHours
+int	noOfKgsAllowed
+Double	additionalFeePerkg
+Here checkInBeforeTwoHours is a Boolean value that says whether the passenger should check-in before two
+ hours or not.
+
+This flag is true in the case of PublicAircraft. 
+
+Include getters/ setters. 
+
+Include the following public methods 
+
+Prototype for the Parameterized Constructor,
+public PublicAircraft(String aircraftName,String source,String destination,Boolean checkInBeforeTwoHours ,int noOfKgsAllowed,float additionalFeePerkg) 
+
+Include the following method.
+
+Method Name	Description
+void display( )	This method prints the details of the booking done for the Public aircraft
+ 
+
+Consider a class PrivateAircraft that extends Aircraft
+
+Include the following private attributes: 
+
+Data Type	Variable Name 
+Boolean	checkInBeforeTwoHours
+String	pilotPreference
+String	purpose
+Here checkInBeforeTwoHours is a Boolean value that says whether the passenger should check-in before two hours or not.
+This flag is false in the case of PrivateAircraft. 
+
+Here, pilot preferences is a string for which the name of the pilot should be given by the passenger according to his preference.
+
+Purpose is a string that indicates the purpose of the flight (Medical,Personal,Cargo)
+
+Include getters/ setters.
+
+Prototype for the Parameterized Constructor,
+public PrivateAircraft(String aircraftName,String source,String destination,Boolean checkInBeforeTwoHours,String pilotPreference ,String  purpose ) 
+
+ 
+
+Include the following method.
+
+Method Name	Description
+void display( )	This method prints the details of the booking done for the Public aircraft
+ 
+
+Consider a Main class to test the classes defined above. 
+
+All the float values should be displayed up to 2 decimal places.
+
+All text in bold corresponds to input and the rest corresponds to output. 
+
+Sample Input Output 1: 
+ 
+
+Enter the name of the Aircraft 
+
+Jet Airways 
+
+Enter the source 
+
+Kolkata
+
+Enter the destination 
+
+Chennai 
+
+Enter the type of Flight 
+
+1.Public Aircraft
+
+2.Private Aircraft
+
+1 
+
+Is the flight check in before two hours
+
+Yes
+
+Enter the number of kgs allowed per person
+
+15
+
+Enter the additional fee charged for extra baggage per Kg
+
+750.00
+
+Flight Details :
+
+Public Aircraft :
+
+Aircraft Name : Jet Airways 
+
+Source : Kolkata
+
+Destination : Chennai
+
+Flight check in before two hours : Yes
+
+Number of kgs allowed per person : 15
+
+Additional fee charged for extra baggage per Kg : 750.00
+
+ 
+
+Sample Input Output 2: 
+ 
+
+Enter the name of the Aircraft 
+
+Spice Jet 
+
+Enter the source 
+
+Kolkata
+
+Enter the destination 
+
+Chennai 
+
+Enter the type of Flight 
+
+1.Public Aircraft
+
+2.Private Aircraft
+
+2
+
+Is the flight check in before two hours
+
+No
+
+Enter the name of the pilot chose
+
+Rex
+
+Enter the Purpose of your flight 
+
+Medical
+
+Flight Details :
+
+Private Aircraft :
+
+Aircraft Name : Spice Jet 
+
+Source : Kolkata
+
+Destination : Chennai
+
+Flight check in before two hours : No
+
+Pilot chose : Rex
+
+Purpose of the flight : Medical 
+
+
+2.)Abstract Class 
+
+Abstract classes are declared with a keyword abstract. These classes cannot be instantiated. They can have attributes/methods. They can have normal methods as well as abstract methods. These abstract methods must be implemented in subclasses or else they should also be declared as abstract. 
+
+Write a program to calculate the perimeter of Circle, Rectangle, and square which implements the abstract class attributes/methods.
+
+Strictly adhere to the Object-Oriented specifications given in the problem statement. All class names, attribute names and method names should be the same as specified in the problem statement.
+
+
+Create an abstract class Shape with abstract method public abstract Double calculatePerimeter()
+
+Consider a class Circle that extends Shape with the following private attributes,
+
+Attribute	Datatype
+radius	Float
+Include appropriate getters and setters, constructors for the class.
+
+Create a parameterized constructor with an argument in order public Circle(Float radius).
+
+Consider a class Rectangle that extends Shape with the following private attributes,
+
+Attribute	Datatype
+length	Float
+breadth	Float
+Include appropriate getters and setters, constructors for the class.
+Prototype for the Parameterized Constructor, public Rectangle(Float length, Float breadth).
+
+Consider  a class Square that extends Shape with the following private attributes,
+
+Attribute	Datatype
+side	Float
+Include appropriate getters and setters, constructors for the class.
+
+Prototype for the Parameterized Constructor, public Square (Float side).
+
+
+Implement the method calculatePerimeter() in all the child classes to calculate appropriate perimeters.
+
+Note: Use 3.14 for pi value
+
+All the double values should be displayed up to 2 decimal places.
+Refer to sample Input and Output for formatting specifications.
+
+
+Sample Input and Output 1:
+
+List of Shapes:
+1.Circle
+2.Rectangle
+3.Square
+Enter your choice:
+1
+Enter the radius of the Circle:
+2.34
+The perimeter is 14.70
+
+Sample Input and Output 2:
+
+List of Shapes:
+1.Circle
+2.Rectangle
+3.Square
+Enter your choice:
+2
+Enter the length of the Rectangle:
+12
+Enter the breadth of the Rectangle:
+3
+The perimeter is 30.00
+
+Sample Input and Output 3:
+
+List of Shapes:
+1.Circle
+2.Rectangle
+3.Square
+Enter your choice:
+3
+Enter the side of the Square:
+13
+The perimeter is 52.00
+
+ 
+
+ 
+
+
+3.)Account Details 
+ 
+Write a Java program to display the Account details using inheritance class and methods.
+ 
+Consider a class Account with the following private attributes/variables.
+
+Data Type	Variable
+String	holderName
+Long	accountNumber
+String	IFSCCode
+Long	contactNumber
+Include appropriate getters and setters, constructors for the class.
+
+Prototype for the Parameterized Constructor,
+public Account(String holderName, Long accountNumber, String IFSCCode, Long contactNumber)
+
+
+The class Account should have the following method
+
+Method Name	Description
+public void display()	This method displays account details in the following order holderName, accountNumber, IFSCCode and contactNumber
+
+ 
+
+Consider class SavingsAccount which extends Account class with the following private attributes/variables.
+
+Data Type	Variable
+Double	interestRate
+ 
+
+The SavingsAccount class include the following method
+
+Method Name	Description
+public void display()	Invokes the base class display() and in addition displays interestRate
+Include appropriate getters and setters, constructors for the class.
+
+Prototype for the Parameterized Constructor,
+public SavingAccount(String holderName, Long accountNumber, String IFSCCode, Long contactNumber, Double interestRate)
+Use super Keyword to call the base class constructor.
+
+Consider class CurrentAccount which extends Account class with the following private attributes/variables.
+
+Data Type	Variable
+String	organizationName
+Long	TIN
+
+The CurrentAccount class include the following method
+
+Method Name	Description
+ public void display()	Invokes base class display() and in addition displays organizationName,TIN
+Include appropriate getters and setters, constructors for the class.
+
+Prototype for the Parameterized Constructor,
+public CurrentAccount(String holderName, Long accountNumber, String IFSCCode, Long contactNumber, String organizationName, Long TIN)
+
+Note: Use super Keyword to call the base class constructor.
+
+Consider a Main class with the main() method, get user details in comma separated format in the following order (Holder name, Account Number, IFSC code, Contact Number).
+Display the Account Details by calling a method of the base class with a child class object.
+
+Input and Output Format
+
+
+Refer sample input and output for formatting specifications.
+
+All the double values should be displayed up to 2 decimal places.
+
+All text in bold corresponds to the input and the rest corresponds to output.
+
+Sample Input and Output 1:
+
+ 
+
+Enter User Details(HolderName,Account Number,IFSC code,Contact Number)
+John,982714210,S160030600514,9092304676
+Enter Account Type
+savings
+Enter Interest Rate
+12.0
+Your Contact Details
+HolderName : John
+Account Number : 982714210
+IFSCCode : S160030600514
+ContactNumber : 9092304676
+Interest Rate : 12.00
+
+Sample Input and Output 2:
+
+Enter User Details(HolderName,Account Number,IFSC code,Contact Number)
+Jack,7889142075,S1600ABY0576,9944001700
+Enter Account Type
+current
+Enter organization Name
+pentamedia Graphics Limited
+Enter TIN number
+7841
+Your Contact Details
+HolderName : Jack
+Account Number : 7889142075
+IFSCCode : S1600ABY0576
+ContactNumber : 9944001700
+Organization Name : pentamedia Graphics Limited
+TIN : 7841
+
+Sample Input and Output 3:
+
+Enter User Details(HolderName,Account Number,IFSC code,Contact Number)
+Mitchell,987451024,SWQ78914AF,9078425168
+Enter Account Type
+curr
+Enter valid Account Type
+
+
+
+
+		

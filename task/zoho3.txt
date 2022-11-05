@@ -1,0 +1,152 @@
+Dear All
+
+Data Types
+
+Task-1
+
+Write a program in which to declare all data types like integer, double, float, long integer and print value in specified format.
+
+Operators
+
+Write a program to calculate Simple Interest.
+
+Compare two numbers by using ternary operator.
+
+Write a program by using Bitwise operators (left and right shift).
+
+Write a program for increment (pre and post) and decrement (pre and post) operators.
+
+Write a program to convert decimal to binary.
+
+Task-2  
+
+Variables
+
+Write a program to differentiate local and global variables.
+
+Write a c program to show the use of static variable.
+
+Control Structures
+
+if else
+
+for, while, do while
+
+switch
+
+break, continue, goto
+
+If...Else
+
+Leap year or not using decision
+
+Largest among three numbers using nested if statement
+
+Write a program to take input of 5 subject. Find total and percent based on percent provide grade like:
+
+             IF Per > 80 “A+”
+
+             Per >= 65 and per <=80 “A”
+
+             Per > =50 and per <=65 “B”
+
+             Per >= 42 and per <=50 “C”
+
+             Per < 42 “Fail”
+
+Switch
+
+Write a program in C to read any month number in integer and display the month name in. the word.(using switch case)
+
+Write a program by using switch case if user enter 11 it will have are area of circle and when user enter 22 it will have area of rectangle and when user enter 33 it will give area of square when user enter 44 it will give area of triangle.
+
+Write a program in c to perform maths and character library function using switch case
+
+Continue, break, goto
+
+Task-5
+
+Write a program in c to print sum of odd no between 0 to 10 using continue.
+
+Write a program in c using goto statement.
+
+For
+
+Write a c program to following pattern:
+
+                          *
+
+                          * *
+
+                          * * *
+
+                          * * * *
+
+Write a program to following pattern
+
+                         1
+
+                         1 2
+
+                         1  2   3
+
+                         1  2   3  4
+
+Write a program to following pattern
+
+                         1
+
+                         2 3
+
+                         4  5   6
+
+                         7  8   9  10
+
+Write a program to following pattern
+
+                        $
+
+                  $          $
+
+             $         $         $
+
+         $       $         $         $
+The program adds, subtracts, multiplies, and divides simple integers. When the program is run, it zeros the result register and displays its contents. The user can then type in an operator and number. The result is updated and displayed. The following operators are valid:
+Operator 	Meaning
++ 		Addition
+-	        	Subtraction
+*               	Multiplication
+/               	Division
+Example (user input is in boldface)
+calc
+Result: 0
+Enter operator and number: + 123
+Result: 123
+Enter operator and number: - 23
+Result: 100
+Enter operator and number: / 25
+Result: 4
+Enter operator and number: * 4
+Result: 16
+Program to clear the specified bit of a number.
+Write a C++ program to which reads an integer n and prints a twin prime which has the maximum size among twin primes less than or equals to n. 
+According to wikipedia "A twin prime is a prime number that is either 2 less or 2 	
+more than another prime number" for example, either member of the twin prime 
+pair (41, 43). In other words, a twin prime is a prime that has a prime gap of two".
+Program to check the two given numbers are same or equal without using any comparison operator.
+Program to print series using function: x + x^3/3! + x^5/5! +â€¦â€¦.+ x^n/n!
+Write a C++ program to which reads n digits chosen from 0 to 9 and counts the number of combinations where the sum of the digits equals to given number. Do not use the same digits in a combination. 
+For example, the combinations where n = 2 and s = 5 are as follows:
+0 + 5 = 5
+1 + 4 = 5
+3 + 2 = 5
+Print a checkerboard (8-by-8 grid). Each square should be 5-by-3 characters wide. A 2-by-2 example follows:
++-----+-----+
+|     |     |
+|     |     |
+|     |     |
++-----+-----+
+|     |     |
+|     |     |
+|     |     |
++-----+-----+

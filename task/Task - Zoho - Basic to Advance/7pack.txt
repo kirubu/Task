@@ -1,0 +1,32 @@
+1.Create a BMI calculator by using packages and it should follows,
+->> Create a package file 1 that contains a class that accepting a basic data members need for your calculator
+
+->> Create a crisp method to calculate a BMI and return the result
+
+->>Create another package file and create an object for the file 1 class and pass the respective arguments then call the method
+
+ 
+
+2.Write a program to create a package p1 and import it in circle class from other package p2.
+
+3.Write a program to create a package named Pack1, and implement this package in sample class.
+
+4.Implement Map using Java
+
+5.Allocate rank for the university students according to their scores by using Maps, Packages.
+
+6.Program to show up the vector class and its methods.
+
+7.Program to perform various operations on ArrayList.
+
+8.Adds an element x to the ArrayList A at the end
+
+9.Sorts the ArrayList A in ascending order
+
+10.Reverses the ArrayList A
+
+11.Prints the size of the ArrayList
+
+12.Prints space separated values of the ArrayList
+
+13.Sorts the ArrayList A in descending order

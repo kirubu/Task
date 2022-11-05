@@ -1,0 +1,129 @@
+import java.util.Scanner;
+
+class ResortGuest
+{
+	private int guestId,noOfRoomBooked;
+	private String guestName,dateOfBooking,mealOption;
+	private double totalBill;
+	
+	public ResortGuest(){}
+	public ResortGuest(int guestId, String guestName, String dateOfBooking, int noOfRoomBooked,   String mealOption, double totalBill) 
+	{
+		this.guestId = guestId;
+		this.noOfRoomBooked = noOfRoomBooked;
+		this.guestName = guestName;
+		this.dateOfBooking = dateOfBooking;
+		this.mealOption = mealOption;
+		this.totalBill = totalBill;
+	}
+	public int getGuestId() {
+		return guestId;
+	}
+	public void setGuestId(int guestId) {
+		this.guestId = guestId;
+	}
+	public int getNoOfRoomBooked() {
+		return noOfRoomBooked;
+	}
+	public void setNoOfRoomBooked(int noOfRoomBooked) {
+		this.noOfRoomBooked = noOfRoomBooked;
+	}
+	public String getGuestName() {
+		return guestName;
+	}
+	public void setGuestName(String guestName) {
+		this.guestName = guestName;
+	}
+	public String getDateOfBooking() {
+		return dateOfBooking;
+	}
+	public void setDateOfBooking(String dateOfBooking) {
+		this.dateOfBooking = dateOfBooking;
+	}
+	public String getMealOption() {
+		return mealOption;
+	}
+	public void setMealOption(String mealOption) {
+		this.mealOption = mealOption;
+	}
+	public double getTotalBill() {
+		return totalBill;
+	}
+	public void setTotalBill(double totalBill) {
+		this.totalBill = totalBill;
+	}
+}
+public class MyClass 
+{
+	public static int totalNoOfRoomBooked(ResortGuest[] arr, String month)
+	{
+		int res = 0;
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i].getDateOfBooking().toLowerCase().contains(month.toLowerCase()))
+			{
+				res = res + arr[i].getNoOfRoomBooked();
+			}
+		}
+		return res;
+	}
+	public static ResortGuest searchResortGuestByMealOpted(ResortGuest[] arr, String meal)
+	{
+		ResortGuest res = null;
+		ResortGuest[] rgArr = new ResortGuest[4];
+		int index = 0;
+		for(int i=0;i<arr.length;i++)
+		{
+			if(meal.trim().equalsIgnoreCase(arr[i].getMealOption()))
+				rgArr[index++] = arr[i];
+		}
+		for(int i=0;i<index;i++)
+		{
+			for(int j=0;j<index;j++)
+			{
+				if(rgArr[i].getTotalBill()>rgArr[j].getTotalBill())
+				{
+					ResortGuest temp = rgArr[i];
+					rgArr[i] = rgArr[j];
+					rgArr[j] = temp;
+				}
+			}
+		}
+		if(index>1)
+			res = rgArr[1];
+		if(index==0 && rgArr[0].getTotalBill()>0)
+			res = rgArr[0];
+		return res;
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		ResortGuest[] rgArr = new ResortGuest[4];
+		for(int i=0;i<rgArr.length;i++)
+		{
+			rgArr[i] = new ResortGuest(); 
+			rgArr[i].setGuestId(Integer.parseInt(sc.nextLine()));
+			rgArr[i].setGuestName(sc.nextLine());
+			rgArr[i].setDateOfBooking(sc.nextLine());
+			rgArr[i].setNoOfRoomBooked(Integer.parseInt(sc.nextLine()));
+			rgArr[i].setMealOption(sc.nextLine());
+			rgArr[i].setTotalBill(Double.parseDouble(sc.nextLine()));
+		}
+		String monthSearch = sc.nextLine();
+		String mealOption = sc.nextLine();
+		
+		int total = totalNoOfRoomBooked(rgArr,monthSearch);
+		if(total>0)
+			System.out.println(total);
+		else
+			System.out.println("No rooms booked");
+		
+		ResortGuest rg = searchResortGuestByMealOpted(rgArr, mealOption);
+		if(rg != null)
+			System.out.println(rg.getGuestId());
+		else
+			System.out.println("No such meal");
+		
+		
+	}
+}

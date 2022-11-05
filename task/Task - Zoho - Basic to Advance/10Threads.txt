@@ -1,0 +1,11 @@
+Write a program to illustrate creation of threads using runnable class.(start method start each of the newly created thread. Inside the run method there is sleep() for suspend the thread for 500 milliseconds).
+
+Write a program to create a class MyThread in this class a constructor, call the base class constructor, using super and starts the thread. The run method of the class starts after this. It can be observed that both the main thread and created child thread are executed concurrently.
+
+Write a program to get the reference to the current thread by calling currentThread() method.
+
+Write a program to create two threads. In this class we have one constructor used to start the thread and run it. Check whether these two threads are run are not.
+
+Create a multithreaded program by creating a subclass of Thread and then creating, initializing, and staring two Thread objects from your class. The threads will execute concurrently and display Java is hot, aromatic, and invigorating to the console window.
+
+Create a multithreaded program as in the previous exercise by creating the MyThread subclass of Thread. But create threads as objects of the class MyClass, which is not a subclass of Thread. MyClass will implement the runnable interface and objects of MyClass will be executed as threads by passing them as arguments to the Thread constructor

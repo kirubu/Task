@@ -1,0 +1,39 @@
+MYSQL Assessment
+----------------
+1.Write a query to display the owner name, contact number of the building whose payment is done on 'October' 
+Month.Display the records in ascending order based on their owner name
+
+
+2.Write a query to display the meter number of the building who have given the maximum fine amount of a month
+
+
+3.Write a query to get the meter number of the building who consumed minimum amount of units during 9PM. 
+Display the records in ascending order based on their meter number.
+
+4.Write a query to display the owner name,building type name,meter number and payment date of the bill 
+which are raised in the month December 2017.
+If the payment is not done display it as 'Not Paid Yet'.
+Give an alias name for payment date as 'Payment_Status'.
+Display the record in ascending order based on owner name.
+
+5.Write a query to display the meter number ,total unit, payable amount and hourly usage of by  morning ,
+Afternoon ,Evening and Night for the month December 2017 of each meter. 
+Display the record in descending order by total units.
+Note : 6 to 11 as Morning give an alias name as morning,12 to 15 as Afternoon give an alias name as afternoon,
+16 to 19 as Evening give an alias name as evening and remaining as Night give an alias name as night.
+
+6.Write a query to display all the fields of the 'meter' whose meter_number starts with 'S' and ends with '6'.
+
+7.Write a query to display the count of bills which has completed payment without fine on October 2017. 
+  Give an alias name as 'bills_paid_withoutfine'.
+
+8.Write a query to display the month and an average fine amount collected in the months July to December. 
+  Give alias as 'average_monthly_fine'. Display the records sorted in ascending order based on month.
+
+9. Write a query to change the column name 'email_address' to 'email' in the building  table.
+   Write a query to remove the column 'address' from the 'building' table.
+   Write a query to insert any 3 records into the 'building_type' table.
+
+10.Create a view to display the due_date, payment_date, difference betweeen the due date and the payment 
+date of the bill in days and payable_amount, whose due date is exceeding the payment date. 
+
