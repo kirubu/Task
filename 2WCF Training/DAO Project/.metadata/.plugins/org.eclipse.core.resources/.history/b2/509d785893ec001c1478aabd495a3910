@@ -1,0 +1,20 @@
+package org.gorl.bean;
+
+public class Person 
+{
+	private int p_id;
+	private String p_name;
+	private int p_age;
+	
+	public Person(int p_id, String p_name, int p_age) 
+	{
+		super();
+		this.p_id = p_id;
+		this.p_name = p_name;
+		this.p_age = p_age;
+	}
+	
+	public Person() {	}
+	
+	
+}

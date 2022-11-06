@@ -1,0 +1,30 @@
+package org.gorl.main;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class OrdersMain 
+{
+	public static void main(String[] args) 
+	{
+		Configuration config = new Configuration();
+		config.configure("hibernate.cfg.xml");
+		
+		SessionFactory factory = config.buildSessionFactory();
+		
+		Session session = factory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		String hql = "from Orders where o_person.p_id like : person";
+		Query query = session.createQuery(hql);
+		query.setParameter("person", 10003);
+		
+		List list = query.list();
+		System.out.println(list);
+	}
+}

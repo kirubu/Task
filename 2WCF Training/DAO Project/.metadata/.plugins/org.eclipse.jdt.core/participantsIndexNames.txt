@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+E:\Kiruba\2WCF Training\DAO Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1635372538.index
+\Sp04_SpringWebMVC03\src\main\java
+E:\Kiruba\2WCF Training\DAO Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1581913132.index
+\Sp03_SpringWebMVC02\src\main\java
+E:\Kiruba\2WCF Training\DAO Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2215336982.index
+\Sp02_SpringWbMVC01\src\main\resources
+E:\Kiruba\2WCF Training\DAO Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3787940977.index
+\Sp02_SpringWbMVC01\src\main\resources

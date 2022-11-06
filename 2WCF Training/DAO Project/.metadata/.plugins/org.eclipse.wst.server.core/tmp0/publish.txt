@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Tue Jun 21 11:32:59 IST 2022
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\C2C\\.m2\\repository\\org\\springframework\\spring-web\\5.2.1.RELEASE\\spring-web-5.2.1.RELEASE.jar=WEB-INF/lib/spring-web-5.2.1.RELEASE.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\C2C\\.m2\\repository\\org\\apache\\tomcat\\embed\\tomcat-embed-jasper\\9.0.1\\tomcat-embed-jasper-9.0.1.jar=WEB-INF/lib/tomcat-embed-jasper-9.0.1.jar

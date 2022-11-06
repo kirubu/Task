@@ -1,0 +1,46 @@
+Create an abstract class Instrument which is having the abstract function play. 
+Create three more sub classes from Instrument which is Piano, Flute, Guitar.
+Override the play method inside all three classes printing a message 
+“Piano is playing  tan tan tan tan  ”  for Piano class
+“Flute is playing  toot toot toot toot”  for Flute class
+“Guitar is playing  tin  tin  tin ”  for Guitar class 
+You must not allow the user to declare an object of Instrument class.
+Create an array of 10 Instruments.
+Assign different type of instrument to Instrument reference.
+Check for the polymorphic behavior of  play method.
+Use the instanceof operator to print that which object stored at which index of instrument array.
+
+
+==================================================================================================
+
+Create an abstract class Compartment to represent a rail coach. Provide an abstract function notice in this class. 
+Derive FirstClass, Ladies, General, Luggage classes from the compartment class. 
+Override the notice function in each of them to print notice suitable to the type of the compartment.
+Create a class TestCompartment . Write main function to do the following:
+Declare an array of Compartment of size 10.
+Create a compartment of a type as decided by a randomly generated integer in the range 1 to 4.
+Check the polymorphic behavior of the notice method.
+
+
+---------------------------------------------------------------------------------------------------
+Create a package called test package;
+Define a class called foundation inside the test package; 
+Inside the class, you need to define 4 integer variables; 
+Var1 as private; 
+Var2 as default; 
+Var3 as protected; 
+Var4 as public; 
+Import this class and packages in another class. 
+Try to access all 4 variables of the foundation class and see what variables are accessible and what are not accessible.
+
+------------------------------------------------------------------------------------------------------
+
+Write an interface called Playable, with a method
+void play();
+Let this interface be placed in a package called music.
+Write a class called Veena which implements Playable interface. Let this class be placed in a package music.string
+Write a class called Saxophone which implements Playable interface. Let this class be placed in a package music.wind
+Write another class Test in a package called live. Then,
+a. Create an instance of Veena and call play() method
+b. Create an instance of Saxophone and call play() method
+c. Place the above instances in a variable of type Playable and then call play()

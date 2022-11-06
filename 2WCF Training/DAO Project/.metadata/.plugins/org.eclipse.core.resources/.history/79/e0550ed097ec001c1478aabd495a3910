@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+	<class name="org.gorl.bean.Orders" table="orders">
+		<id name="o_id" column="oid" type="int">
+			<generator class="sequence">
+				<param name="sequence_name">hibOdrSeq</param>
+			</generator>
+		</id>
+	</class>
+</hibernate-mapping>

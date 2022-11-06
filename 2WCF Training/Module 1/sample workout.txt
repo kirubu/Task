@@ -1,0 +1,33 @@
+Example1:
+     C:\>java Sample 3
+     O/P Expected :
+                   *
+                   *  * 
+                   *  *  *
+
+Write a program to print the color name, based on color code. If color code in not valid then print "Invalid Code". R->Red, B->Blue, G->Green, O->Orange, Y->Yellow, W->White.
+
+
+Intialize a character variable in a program and if the value is alphabet then print "Alphabet" if it’s a number then print "Digit" and for other characters print "Special Character"
+
+Write a program to check if the program has received command line arguments or not. If the program has not received the values then print "No Values", else print all the values in a single line separated by ,(comma).
+Eg1) java Example
+O/P: No values
+Eg2) java Example Mumbai Bangalore
+O/P: Mumbai,Bangalore
+[Note: You can use length property of an array to check its length
+
+C:\>java Sample 10 20
+     O/P Expected : The sum of 10 and 20 is 30
+
+Write a Program to accept a String as a Command line argument and the program should print a Welcome message.
+Example :
+     C:\> java Sample John
+    
+      O/P Expected : Welcome John
+
+Write a Program that accepts two Strings as command line arguments and generate the output in a specific way as given below.
+Example:
+If the two command line arguments are Wipro and Bangalore then the output generated should be Wipro Technologies Bangalore.
+If the command line arguments are ABC and Mumbai then the output generated should be ABC Technologies Mumbai 
+[Note: It is mandatory to pass two arguments in command line]

@@ -1,0 +1,8 @@
+package org.gorl.bean;
+
+public class Orders 
+{
+	private int o_id, o_no;
+	private String o_item;
+	private Person o_person
+}

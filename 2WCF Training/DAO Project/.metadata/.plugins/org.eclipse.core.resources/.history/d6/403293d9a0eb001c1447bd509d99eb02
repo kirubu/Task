@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+	<class name="org.gorl.bean.KirubaObj" table="kiruba">
+		<id name="kid" column="kno" type="int">
+			<generator></generator>
+		</id>
+	
+	</class>
+</hibernate-mapping>

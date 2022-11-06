@@ -1,0 +1,29 @@
+package com.wipro.hms.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class DBUtil {
+	
+	private static Connection connection = null;
+	public static Connection getDBConnection() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			//connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","ROOT","root");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","B2021042104022","B2021042104022");
+		} 
+		catch (ClassNotFoundException e) 
+		{
+			e.printStackTrace();
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return connection;
+	}
+
+}

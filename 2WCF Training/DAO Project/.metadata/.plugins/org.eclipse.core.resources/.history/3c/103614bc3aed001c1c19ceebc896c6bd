@@ -1,0 +1,13 @@
+package org.gorl.bean;
+
+public class HelloWorld 
+{
+	private String msg;
+
+	public HelloWorld(String msg) 
+	{
+		this.msg = msg;
+	}
+	
+	
+}

@@ -1,0 +1,24 @@
+InnerClasses:
+    1. Anonymous
+    2. Nested inner class
+    class A{
+        int x;
+        class B{ // cannot have static  methods
+        }
+    }
+    A.B ob = new A().new B()
+    3. method local inner class
+    class A{
+        int x;
+        void test(){
+            int y;
+            class B{
+                void xxxx(){}
+            }
+            B l = new B();
+            l.xxxx();
+        }
+        
+    }
+    4. static nested inner class
+        supports static methods

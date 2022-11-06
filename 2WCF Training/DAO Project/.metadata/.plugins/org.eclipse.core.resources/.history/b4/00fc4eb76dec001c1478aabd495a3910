@@ -1,0 +1,82 @@
+package org.gorl.main;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+import org.gorl.bean.KirubaObj;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class KirubaMain {
+
+	public static void main(String[] args) 
+	{	
+		Configuration cfg = new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		
+		SessionFactory factory = cfg.buildSessionFactory();
+		Session session = factory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Scanner sc = new Scanner(System.in);
+		//KirubaObj obj = new KirubaObj(sc.nextInt(), sc.next(), sc.next());
+		
+		//---------insert---------
+		/*session.save(obj);
+		/System.out.println(obj+" inserted successfully");*/
+		
+		//---------insert with seqence--------------
+		/*KirubaObj obj = new KirubaObj(sc.next(), sc.next());
+		session.save(obj);
+		System.out.println(obj+" inserted");*/
+		
+		//-----update-------------
+		/*obj.setName("kanagampujam");
+		session.update(obj);
+		System.out.println(obj+" updated");*/
+		
+		//-----select-------using HQL
+		
+		
+		//-----select-------using get and load method
+		/*KirubaObj kirObj = session.get(KirubaObj.class, 102);//return null if no id found
+		KirubaObj kirObj1 = session.load(KirubaObj.class, 103);//generate ObjNotFondExcep if no id found
+		System.out.println(kirObj);
+		System.out.println(kirObj1);*/
+		
+		String wherQuery = "select k.name,k.gender from KirubaObj k where kid=101";
+		Query whereQuery = session.createQuery(wherQuery);
+		List<Object[]> liWhere = whereQuery.list();
+		for(Object[] ar:liWhere)
+		System.out.println(ar);
+			
+		/*String query1 = "from KirubaObj";//from className
+		String query = "select k.kid, k.name,k.gender from KirubaObj k";
+		//String query = "select k.name from KirubaObj k";
+		Query qry = session.createQuery(query);
+		List<Object[]> list = qry.list();
+		for(Object[] oar:list)
+		{
+			System.out.println(oar[0] + " "+ oar[1]+" "+oar[2]);
+			//System.out.println(oar);
+		}
+		
+		Query qry1 = session.createQuery(query1);
+		List li = qry1.list();
+		li.forEach(System.out::println);*/
+		
+		//select using get method
+		//KirubaObj obj =  session.get(KirubaObj.class, 2);//20 id
+		//System.out.println(obj+" get method");
+		
+		transaction.commit();
+		session.close();
+		factory.close();
+	}
+
+}
+

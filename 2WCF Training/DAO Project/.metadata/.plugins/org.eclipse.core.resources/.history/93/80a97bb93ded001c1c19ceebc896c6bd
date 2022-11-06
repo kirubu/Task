@@ -1,0 +1,13 @@
+package org.gorl.main;
+
+import org.springframework.context.ApplicationContext;
+
+public class HelloWold {
+
+	public static void main(String[] args) 
+	{
+		ApplicationContext context = new ApplicationContext()
+
+	}
+
+}

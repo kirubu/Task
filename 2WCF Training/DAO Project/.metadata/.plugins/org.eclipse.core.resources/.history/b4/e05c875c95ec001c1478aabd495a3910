@@ -1,0 +1,19 @@
+package org.gorl.bean;
+
+public class Orders 
+{
+	private int o_id, o_no;
+	private String o_item;
+	private Person o_person;
+	
+	public Orders(int o_id, int o_no, String o_item, Person o_person) 
+	{
+		super();
+		this.o_id = o_id;
+		this.o_no = o_no;
+		this.o_item = o_item;
+		this.o_person = o_person;
+	}
+	
+	
+}

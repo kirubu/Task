@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+	<class name="org.gorl.bean.Person" table="person">
+		<id name = "p_id" column = "pid" type="int">
+			<generator class="sequence">
+				<param name="sequence_name">hibPerSeq</param>
+			</generator>
+		</id>
+	</class>
+</hibernate-mapping>
