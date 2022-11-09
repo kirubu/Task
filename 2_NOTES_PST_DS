@@ -1,0 +1,1359 @@
+-+-+-+-+-+-+-+
+| 29-08-2022 |
+|  PST & DS  |
+-+-+-+-+-+-+-+
+
+Introduction to problem solving technique
+Skills of a Software Developer: Read From PDF
+Performance Measures of Software Developer: Read From PDF
+Problem Definition: Read From PDF
+Problem Solving Steps: Read From PDF
+Problem Classification: Read From PDF
+  1. Concurrent/Distributes Application
+  2. Sequential/Event-Based Application
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Problem Solving Methods
+1. Heuristic Approach/Brute Force Approach
+   Try all possible combination to get the solution
+   
+   Example: Say we have a app in which the security pin is of 4 digits so definitely pin will be ranged from 0000 - 9999 so if we have a software that can generate pin from 0000-9999 in 2 seconds then we can track the pin of any user in 2 seconds. this time we are not applying any specific logic to guess the pin but we are actually trying all possible combinations.
+   
+   But say we have a website in which the user account password has to be of minumum 12 characters such that Upper Case alphabet (26), lower case alphabet (26), Digits (10) and Special Symbols (10 different symbols are there) so for a single character possible there can one character out of 72 possible characters so total combinations are 12^72 which is making huge number of combinations so brute force strategy is not going to give us any optimal solution because it may require huge computation power and still result is not guaranteed.
+	 
+	 If we are talking about the effectiveness of a solution then it is measured using complexity that defines how much time an algorithm will take to solve the problem; complexity is defined in the three different cases
+	 1. Best Case: The case when solution is achieved in no time or minimum time.
+	 2. Average Case: The case when solution is achieved in near some mean time or average time
+	 3. Worst Case: The case when solution is achieved maximum possible time.
+	 
+	 Linear Search
+	 Say we have a list of 10 values
+	 2 45 25 14 19 37 58 57 36
+	 
+	 You want to check if a value if present in the list of not. The linear search algorithm says that check for every value  one by ont until the value is found or the list of values exhausted.
+	 
+	 case-1: Search the element 2
+	 The value 2 is first value of the list so the result will be available to us in just one comparison. This is best case
+	 
+	 case-2: Search the element 100
+	 The value 100 is not in the list so after performing all the 10 comparisons we come to know that the value 100 is not available in the list; this is worst case.
+	 
+	 case-3: Search the element 37
+	 The value 37 is in the list so after performing 6 comparisons we come to know that the value 37 is available in the list; this is average case.
+	 
+	 Say we have a list of 10,00,000 elements the for the worst case total comparisons will be 10,00,000 which is actually too high... as the number of input values are increasing then brute force approach is not offering an attractive solution.
+	 
+	 Sorting: it is the act of arranging the items systematically
+	 - It may be arranging the item is a sequence according to criteria
+	 - It may be grouping of the items based on some common property
+	 
+	 we are having several sorting algorithms
+	 1. Bubble Sort (Brute Force)
+	 2. Selection Sort (Brute Force)
+	 3. Insertion Sort (Brute Force)
+	 4. Merge Sort (Divide and conquer)
+	 5. Quick Sort (Divide and conquer)
+	 6. Heap Sort (Divide and conquer)
+	 
+	 ::Bubble Sort:: (Arrange the data in ascending order)
+	 Say we have a list of 5 elements
+	 50 40 30 20 10 <--- list of values
+	 0  1  2  3  4  <--- index of the list
+	 
+	 Round-1
+	 50 > 40 (T, swap 50 and 40) now updated list is 40 50 30 20 10
+	 50 > 30 (T, swap 50 and 30) now updated list is 40 30 50 20 10
+	 50 > 20 (T, swap 50 and 20) now updated list is 40 30 20 50 10
+	 50 > 10 (T, swap 50 and 10) now updated list is 40 30 20 10 50 (the biggest element is available at the last)
+	 
+	 Round-2 [Input list: 40 30 20 10 50]
+	 40 > 30 (T, swap 40 and 30) now updated list is 30 40 20 10 50
+	 40 > 20 (T, swap 40 and 20) now updated list is 30 20 40 10 50
+	 40 > 10 (T, swap 40 and 10) now updated list is 30 20 10 40 50 (the 2 biggest element is available at the last in sorted order)
+	 
+	 Round-3 [Input list: 30 20 10 40 50]
+	 30 > 20 (T, swap 30 and 20) now updated list is 20 30 10 40 50
+	 30 > 10 (T, swap 30 and 10) now updated list is 20 10 30 40 50 (the 3 biggest element is available at the last in sorted order)
+	 
+	 Round-4 [Input list: 20 10 30 40 50]
+	 20 > 10 (T, swap 10 and 20) now updated list is 10 20 30 40 50
+	 
+	 :Analysis::
+	 Rounds: 1 to n - 1
+	 Round: 1 Comparison: n - 1
+	 Round: 2 Comparison: n - 2
+	 Round: 3 Comparison: n - 3
+	 ....
+	 Round: n - 1 Comparison: 1
+	 
+	 Another example
+	 Say we have another list of 5 elements
+	 10 65 37 67 5 <--- list of values
+	 0  1  2  3  4  <--- index of the list
+	 
+	 Round-1
+	 10 > 65 (F, no swap)
+	 65 > 37 (T, swap 65 and 37) now updated list is 10 37 65 67 5
+	 65 > 67 (F, no swap)
+	 67 > 5 (T, swap 67 and 5) now updated list is 10 37 65 5 67 (the biggest element is available at the last)
+	 
+	 Round-2
+	 10 > 37 (F, no swap)
+	 37 > 65 (F, no swap)
+	 65 > 5 (T, swap 5 and 65) now updates list is 10 37 5 65 67
+	 
+	 Round-3
+	 10 > 37 (F, no swap)
+   37 > 5 (T, swap 37 and 5) 10 5 37 65 67
+	 
+	 Round-4
+	 10 > 5 (T, swap 10 and 5) 5 10 37 65 67
+	 
+	 Another example
+	 Say we have another list of 5 elements
+	 10 20 30 40 50 <--- list of values
+	 0  1  2  3  4  <--- index of the list
+	 
+	 Round-1
+	 10 > 20 (F, no swap)
+	 20 > 30 (F, no swap)
+	 30 > 40 (F, no swap)
+	 40 > 50 (F, no swap)
+	 
+	 Now swap means all elements are already in the sorted order
+	 
+	 Best case complexity for the bubble sort algorithm: O(n)
+	 Worst case and average case complexity for the bubble sort algorithm: O(n^2)
+	 
+	 ::Selection Sort::
+	 Select the minimum element from the list (from the index 0 to n - 1) and put the swap the minimum element with element at index-0
+	 Select the minimum element from the list (from the index 1 to n - 1) and put the swap the minimum element with element at index-1
+	 Select the minimum element from the list (from the index 2 to n - 1) and put the swap the minimum element with element at index-2
+	 ....
+	 repeat the same until all elements are sorted
+	 
+	 Let say we have a list of following elements
+	 4 3 9 6 1 7 0 <-- elements of list
+	 0 1 2 3 4 5 6 <-- index of list
+	 
+	 round-1
+	 Select the minimum elements, it is 0 (select from index 0 to 6)
+	 swap it with the element at index-0 so the updated list 0 3 9 6 1 7 4
+	 
+	 round-2
+	 Select the minimum elements, it is 1 (select from index 1 to 6)
+	 swap it with the element at index-1 so the updated list 0 1 9 6 3 7 4
+	 
+	 round-3
+	 Select the minimum elements, it is 3 (select from index 2 to 6)
+	 swap it with the element at index-2 so the updated list 0 1 3 6 9 7 4
+	 
+	 round-4
+	 Select the minimum elements, it is 4 (select from index 3 to 6)
+	 swap it with the element at index-3 so the updated list 0 1 3 4 9 7 6
+	 
+	 round-5
+	 Select the minimum elements, it is 6 (select from index 4 to 6)
+	 swap it with the element at index-4 so the updated list 0 1 3 4 6 7 9
+	 
+	 round-6
+	 Select the minimum elements, it is 7 (select from index 5 to 6)
+	 swap it with the element at index-5 so the updated list 0 1 3 4 6 7 9
+	 
+	 In selection sort algorithm, no matter what is the quality of the input set, selecting the minimum element and swapping will be done all the elements so complexity of selecting sort algorithm is O(n^2) for all the cases, (best case, average case and worst case)
+	 
+	 ::Insertion Sort::
+	 Say we have a list of 5 elements
+	 50 40 30 20 10 <--- list of values
+	 0  1  2  3  4  <--- index of the list
+	 
+	 Round-1:: 50 40 30 20 10 (50 > 40 so shift the 50 to one step right and put 50 there) so the updated sequence 40 50 30 20 10
+	 Round-2:: 40 50 30 20 10 (50 > 30 and 40 > 30 so shift the 50 and 40 both to one step right and put 30 there) so the updated sequence 30 40 50 20 10
+	 Round-3:: 30 40 50 20 10 (50 > 20, 40 > 20 and 30 > 20 so shift the 50, 40 and 30 to one step right and put 20 there) so the updated sequence 20 30 40 50 10
+	 Round-4:: 20 30 40 50 10 (50 > 10, 40 > 10, 30 > 10 and 20 > 20 so shift the 50, 40, 30 and 20 to one step right and put 10 there) so the updated sequence 10 20 30 40 50
+	 
+	 Say we have a list of 5 elements
+	 10 65 37 67 5 <--- list of values
+	 0  1  2  3  4  <--- index of the list
+	 Round-1:: 10 65 37 67 5 (65 > 10 so do nothing)
+	 Round-2:: 10 65 37 67 5 (37 < 65 so shift 65 to the one step right and put 37 there) so updated sequence 10 37 65 67 5
+	 Round-3:: 10 37 65 67 5 (all elements on the LHS of 67 are smaller then do nothing)
+	 Round-4:: 10 37 65 67 5 (all elements on the LHS of 5 are bigger then shift all elements to one step right and then place 5 at the stating position) so updated sequence is 5 10 37 65 67
+	 
+	 Say we have a list of 5 elements
+	 10 20 30 40 50 <--- list of values
+	 0  1  2  3  4  <--- index of the list
+	 Round-1:: 10 20 30 40 50 (all elements on the left of 20 are smaller so do nothing)
+	 Round-2:: 10 20 30 40 50 (all elements on the left of 30 are smaller so do nothing)
+	 Round-3:: 10 20 30 40 50 (all elements on the left of 40 are smaller so do nothing)
+	 Round-4:: 10 20 30 40 50 (all elements on the left of 50 are smaller so do nothing)
+	 
+	 For insertion sort, the best complexity is O(n)
+	 For insertion sort, the worst complexity is O(n^2)
+	 
+2. Divide and Conquer Approach
+	 ::Sainta's Dirty Socks Problem::
+   Total packets: 1024 (1023 packaets are containing only roller skates and one has roller skate + dirty socks)
+
+    Comparison-1
+    Divide the packets into two equals batches
+    Batch-1: 512
+    Batch-2: 512
+
+    Put both Batch-1 and Batch-2 on the weighing scale the heavier batch is containing the culprit packet.
+    Say Batch-1 is heavier means Batch-2 can be discarded from comparison because it has all fine packets
+
+    Comparison-2
+    Divide the Batch-1 packates (total: 512) into two equals batches
+    Batch-3: 256
+    Batch-4: 256
+
+    Put both Batch-3 and Batch-4 on the weighing scale the heavier batch is containing the culprit packet.
+    Say Batch-4 is heavier means Batch-3 can be discarded from comparison because it has all fine packets
+
+    Comparison-3
+    Divide the Batch-4 packates (total: 256) into two equals batches
+    Batch-5: 128
+    Batch-6: 128
+
+    Put both Batch-5 and Batch-6 on the weighing scale the heavier batch is containing the culprit packet.
+    Say Batch-5 is heavier means Batch-6 can be discarded from comparison because it has all fine packets
+
+    Comparison-4
+    Divide the Batch-6 packates (total: 128) into two equals batches
+    Batch-7: 64
+    Batch-8: 64
+
+    Put both Batch-7 and Batch-8 on the weighing scale the heavier batch is containing the culprit packet.
+    Say Batch-8 is heavier means Batch-7 can be discarded from comparison because it has all fine packets
+
+    Comparison-5
+    Divide the Batch-8 packates (total: 64) into two equals batches
+    Batch-9: 32
+    Batch-10: 32
+
+    Put both Batch-9 and Batch-10 on the weighing scale the heavier batch is containing the culprit packet.
+    Say Batch-10 is heavier means Batch-9 can be discarded from comparison because it has all fine packets
+
+    Comparison-6
+    Divide the Batch-9 packates (total: 32) into two equals batches
+    Batch-11: 16
+    Batch-12: 16
+
+    Put both Batch-11 and Batch-12 on the weighing scale the heavier batch is containing the culprit packet.
+    Say Batch-12 is heavier means Batch-11 can be discarded from comparison because it has all fine packets
+
+    Comparison-7
+    Divide the Batch-13 packates (total: 16) into two equals batches
+    Batch-13: 8
+    Batch-14: 8
+
+    Put both Batch-13 and Batch-14 on the weighing scale the heavier batch is containing the culprit packet.
+    Say Batch-13 is heavier means Batch-14 can be discarded from comparison because it has all fine packets
+
+    Comparison-8
+    Divide the Batch-13 packates (total: 8) into two equals batches
+    Batch-15: 4
+    Batch-16: 4
+
+    Put both Batch-15 and Batch-16 on the weighing scale the heavier batch is containing the culprit packet.
+    Say Batch-15 is heavier means Batch-16 can be discarded from comparison because it has all fine packets
+
+    Comparison-9
+    Divide the Batch-15 packates (total: 4) into two equals batches
+    Batch-17: 2
+    Batch-18: 2
+		
+		::Binary Search::
+		Prerequisite: List of elements must be sorted in ascending or descending order
+		
+		Algorithm
+		variables start, end, element
+		while(start <= end){
+			int mid = floor(start + end)/2;
+			if(value at mid == element){
+				print "element is found at index",mid
+				stop;
+			}
+			if(value at mid < element)
+				start = mid + 1
+			else
+				end = mid + 1
+		}
+		if(start > end){
+			value not found
+		}
+		
+		Say we have a list of elements, the first element is available at index-0 and the last element is available at index-9
+		2 14 19 25 27 36 37 45 57 58 <-- list of values
+		0 1  2  3  4  5  6  7  8  9  <-- index of list
+		
+		Case-1: Say we want to check for element 27
+		start = 0 end = 9
+		mid = floor(start + end)/2
+		mid = floor(0 + 9)/2
+		mid = 4
+		
+		Output: element is found at index 4
+		
+		Look at the element at the mid: 27 so searching is successfull in just one comparison i.e. this is the best case
+		
+		Case-2: Say we want to check for element 58
+		start = 0 end = 9
+		mid = 4
+		
+		Element at index-4 it is 27 which is smaller than 58 so all elements on the LHS of 27 (including 27) can be discarded from further searching because 58 will be available on the RHS of 27
+		start = 5 end = 9
+		mid = 7
+		
+		Element at index-7 it is 45 which is smaller than 58 so all elements on the LHS of 45 (including 45) can be discarded from further searching because 58 will be available on the RHS of 45
+		start = 8 end = 9
+		mid = 8
+		
+		Element at index-8 it is 57 which is smaller than 58 so all elements on the LHS of 57 (including 57) can be discarded from further searching because 58 will be available on the RHS of 57
+		start = 9 end = 9
+		mid = 9
+		
+		Element at index-9 is 58
+		
+		Output: element found at index 9
+		
+		-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+		| Total comparison in linear search: 10 |
+		| Total comparison in binary search: 4  |
+		-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+		
+		Case-3: Say we want to check for element 24
+		start = 0 end = 9
+		mid = 4
+		Element at index-4 it is 27 which is larger than 24 so all elements on the RHS of 27 (including 27) can be discarded from further searching because 24 will be available on the LHS of 27
+		
+		start = 0 end = 3
+		mid = 1
+		Element at index-1 it is 14 which is smaller than 24 so all elements on the LHS of 14 (including 14) can be discarded from further searching because 24 will be available on the RHS of 14
+		
+		start = 2 end = 3
+		mid = 2
+		Element at index-2 it is 19 which is smaller than 24 so all elements on the LHS of 19 (including 19) can be discarded from further searching because 24 will be available on the RHS of 19
+		
+		start = 3 end = 3
+		mid = 3
+		Element at index-3 it is 25 which is larger than 24 so all elements on the RHS of 25 (including 25) can be discarded from further searching because 24 will be available on the LHS of 25
+		
+		start = 3 end = 2 (here start > end means element not found)
+		Output Value not found
+		
+		-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+		| Total comparison in linear search: 10 |
+		| Total comparison in binary search: 4  |
+		-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+		
+		Complexity of the binary search log (base 2) N where N is total number of elements
+		Tip: for 10,00,000 items the maximum comparison in linear search will be 10,00,000
+		Tip: for 10,00,000 items the maximum comparison in binary search will be 20
+		
+		1000 elements
+		for 1,000 items the maximum comparison in linear search will be 1000
+		for 1,000 items the maximum comparison in binary search will be 10
+		
+		
+		log (base 2) 1000 => log (base 2) 2^10 => 10 log (base 2) 2 => 10 x 1 => 10
+		[2^10 => 1024]
+		
+		Comparison between Brute Force and Divide and conquer approach
+		::Say we want to computer a raised to the power n such that you have to take input a and n::
+		
+		Brute Force Approach
+		int a, n, result = 1;
+		print "Enter value of base "
+		Input a
+		print "Enter value of exponent "
+		Input n
+		int count = 1;
+		while(count <= n){
+			result = result * a;
+			count = count + 1;
+		}
+		print result;
+				
+		Execution
+		Enter value of base 3
+		Enter value of exponent 5
+		a = 3 n = 5
+		count = 1,2,3,4,5,6(f)
+		result = 1,3,9,27,81,243
+		
+		From the above example it is clear the for 3^5 the loop is going to be executed for 5 times so if you want to find 2^100 then the value loop is going to be executed for 100 times. so complexity of this approach is linear to n that is the exponent value
+		
+		Divide and conquer approach
+		x^n => x^(n/2) * x^(n/2) if n is even
+		x^n => x^(n/2) * x^(n/2) * x if n is odd
+		https://codecrucks.com/exponential-problem-solving-using-divide-and-conquer/#:~:text=Divide%20and%20Conquer%20Approach%20for%20solving%20Exponential%20Problem&text=If%20power%20of%20x%20is,it%20hits%20to%20base%20case.
+		
+		So the above expression is 2^100 can be written as 2^50 x 2^50
+		So 2^50 can be written as 2^25 x 2^25
+	  So 2^25 can be written as 2^12 x 2^12 x 2
+	  So 2^12 can be written as 2^6 x 2^6
+	  So 2^6 can be written as 2^3 x 2^3
+	  So 2^3 can be written as 2^1 x 2^1 x 2^1
+		
+		Algorithm EXPONENT_DC(x, n)
+		// we want to find n power of x
+		if n == 0 then
+			return 1
+		else
+			m ← EXPONENT_DC(x, n/2)
+			if n%2 == 0 then
+        return m*m      // if n is even
+			else
+        return m*m*x    // if n is odd
+			end
+		end
+
+	  Another example
+	  Let us consider 2^13
+
+	  In first stage of division: 2^13 = 2^6 * 2^6 * 2 … (1)
+	  In second stage of division: 2^6 = 2^3 * 2^3 … (2)
+	  In third stage of division: 2^3 = 2 * 2 * 2 … (3)
+    
+    For this problem, n = 1,
+    now this smallest sub problems will be solved and the result will be passed to parent problem
+    From equation (3), 2^3 = 2 * 2 * 2 = 8
+    From equation (2), 2^6 = 2^3 * 2^3 = 8 * 8 = 64
+    From equation (1), 2^13 = 2^6 * 2^6 * 2 = 64 * 64 * 2 = 8192.
+		
+		Complexity of this approach is log (base 2) n
+		
+		::Merge Sort::
+		Say we have an array of 8 elements
+		10 4 57 26 89 47 35 65
+		0  1 2  3  4  5  6  7
+		start = 0 end = 7
+		mid = 3
+		                                                  10 4 57 26 89 47 35 65
+																											     s:0 e:7 m:3
+																													    (1)
+											
+											10 4 57 26                                                                    89 47 35 65
+											s:0 e:3 m:1                                                                   s:4 e:7 m:5
+											   (2)                                                                            (12)
+											
+						10 4                     57 26                                      89 47                                    35 65
+				s:0 e:1 m:0               s:2 e:3 m:2                                 s:4 e:5 m:5                              s:6 e:7 m:6
+				     (3)                       (7)                                       (13)                                     (17)
+				
+				10           4           57          26                        89                 47                      35                 65
+	 s:0 e:0 m:0  s:1 e:1 m:1  s:2 e:2 m:2  s:3 e:3 m:3               s:4 e:4 m:4        s:5 e:5 m:5            s:6 e:6 m:6        s:7 e:7 m:7
+	     (4)          (5)          (8)         (9)                       (14)               (15)                    (18)               (19)
+			 
+			       
+						 4 10                  26 57                                        47 89                                  35 65
+					s:0 e:1 m:0            s:2 e:3 m:2                                 s:4 e:5 m:4                              s:6 e:7 m:6
+					   (6)                    (10)                                         (16)                                    (20)
+						 
+						            
+												4 10 26 57                                                              35 47 65 89
+												s:0 e:3 m:2                                                             s:4 e:7 m:5
+												   (11)                                                                     (21)
+													 
+													                               4 10 26 35 47 57 65 89
+		                                                          s:0 e:7 m:3
+																															    (22)
+	
+	Complexity of merge sort algorithm is O(N log (base 2) N)
+	Tip: Insertion, selecting and bubble sort they are internal sorting algorithms means they do no need additional space for the sorting but merge sort is an external sorting algorithm because it require additional space for sorting yet it offer better time complexity than the three sorting algorithm that are discussed earlier.
+	
+	::quicksort:: (partition exchange sort)
+	This is an internal sorting algorithm
+	Complexity Best case and average case: O (N log (base 2) N)
+	Complexity worst case: O (N^2)
+	
+	After each round, the list/array will bve divided into three parts
+	1. The element to the left of pivot element will be less than the pivot element (The sequence may or may not be in sroted order)
+	2. The element to the right of pivot element will be more than the pivot element (The sequence may or may not be in sroted order)
+	3. The pivot element (called the central element); you can choose any but normally the last (right most) element is chosen as the pivot element
+	
+	https://www.youtube.com/watch?v=PgBzjlCcFvc
+	
+	::heap sort::
+	Will discuss tree first then will discuss heap then heap sort (will discussed after data structure)
+	
+3. Greedy Algorithm
+  - Greedy design technique is primarily used in optimization problem
+	 - In helps in constructing the solution for a problem through a sequence of steps where wach step is considered to be a partial solution. This partial solution is extended progressively to get the complete solution
+	 - The choice of each step in the greedy approach is done based on the following-
+	 * It must be feasible
+	 * It must be locally optimum
+	 * It must be irrevocable
+	 
+	::Fractional Knapsack Problem::
+	Say a thief is entered in a store such that he is able to carry weight of maximum W so to get the maximum value of the theft product the thief must pick the most expensive items first then the second most expensive and so on. This strategy is called the greedy strategy.
+	
+	Say we have list of items containing value in INR and weight in kgs
+	items = {{60, 10}, {120, 30}, {100, 20}}
+
+	The first item is costing 60/- and the total weight is 10 kgs so per kg cost: 6/-
+	The second item is costing 120/- and the total weight is 30 kgs so per kg cost: 4/-
+	The third item is costing 100/- and the total weight is 20 kgs so per kg cost: 5/-
+	
+	Total weight that theif can carry W = 50 kgs
+	
+	Thief should pick the first item whose value is 6/- per kg; all 10 kg stolen, value is 60/- and remaining capacity: 40 Kg
+	next thief should pick the third item whose value is 5/- per kg; all 20 kg stolen, value is 100/- and remaining capacity: 20 Kg
+	next thief should pick the second item whose value is 4/- per kg; all 20 kg stolen, value is 80/- and remaining capacity: 0 Kg
+	total value of the theft items: 240/-
+	
+	::Maximum activity problem::
+	You are given with n activities with start and finish time. Select the maximum number of activities that can be performed by a single person such that one person can participate in one activity at a time.
+	
+	start[] = {10, 12, 20}
+	finish[] = {20, 25, 30}
+	
+	A person can perform at most two activities the first {start time: 10, finish time: 20} and another is {start time: 20, finish time: 30}
+	
+	Another example
+	start[] = {1, 3, 0, 5, 8, 5}
+	finish[] = {2, 4, 6, 7, 9, 9}
+	
+	A person can perform at most four activities The maximum set of activities is {start time: 1, finish time: 2}, {start time: 3, finish time: 4}, {start time: 5, finish time: 7} and {start time: 8, finish time: 9}
+	
+	Approach: 
+	The greedy choice is to always pick the next activity whose finish time is least among the remaining activities ans the start time is more than or equal to finnish time of the previosly selected activity. We can sort the activities accordinf to their finish time so that we always consider the next activity as minimum finish time activity.
+	1. Sort the activities according to the finish time
+	2. Select the first activity from the sorted array
+	3. Do following for the remaining activity in the sorted array
+	   a. The start time of this activity is greater than or equal to the finish time of the previously selected activity then select this activity and print
+	
+4. Dynamic Programming Algorithm
+   
+	Dynamic programming works on idea that if you have solved a problem with the given input, then save the result for future reference, so as to avoid solving the same problem again. If the given problem can be broken up in to smaller sub-problems and these smaller subproblems are in turn divided into still-smaller ones, and in this process, if you observe some over-lapping subproblems, then it is a big hint for Dynamic programming. Also, the optimal solutions to the subproblems contribute to the optimal solution of the given problem.
+		
+	Recursion uses the top-down approach to solve the problem i.e. It begin with core (main) problem then breaks it into subproblems and solve these subproblems similarily. In this approach same subproblem can occur multiple times and consume more CPU cycle, hence increase the time complexity. Whereas in Dynamic programming same subproblem will not be solved multiple times but the prior result will be used to optimise the solution. Dynamic algorithms use Memorization.
+
+
+  Writing "1 + 1 + 1 + 1 + 1 + 1 + 1 + 1"
+	What it is equal to 
+	counting: Eight
+	 
+	Writing "1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1"
+	counting: Nine
+	 
+	Writing "1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1"
+	counting: ten
+	 
+	Writing "1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1"
+	counting: eleven
+	
+	you didn't recount because you remembered  that there was Eight! Dynamic programming is just a fancy way to say that remember the stuff to save time later.
+	
+  An example fibonacci Series
+	Fibonacci(n) = 0 if n = 0
+	Fibonacci(n) = 1 if n = 1
+	Fibonacci(n) = Fibonacci(n - 1) + Fibonacci(n - 2)
+	
+	0 1 1 2 3 5 8 13 21 <-- elements of fibinacci series
+	0 1 2 3 4 5 6 7  8  <-- index of elements of fibinacci series
+
+  Recursive Solution
+  int fibo(int n){
+		if(n == 0)
+			return 0;
+		if(n == 1)
+			return 1;
+		int result = fibo(n - 1) + fibo(n - 2);
+		return result;
+  }
+
+  say we are calling fibo(5)
+
+                                                    fibo(5)
+																										
+																	
+											
+											fibo(4)                                                              fibo(3)
+							
+					
+					fibo(3)                  fibo(2)                                    fibo(2)                   fibo(1)
+					                                                                                              return 1
+			fibo(2)   fibo(1)       fibo(1)    fibo(0)                   fibo(1)           fibo(0)
+			          return 1     return 1     return 0                   return 1          return 0
+	
+	fibo(1)   fibo(0)
+	return 1     return 0
+	
+	fibo(0): 3 times
+	fibo(1): 5 times
+	fibo(2): 3 times
+	fibo(3): 2 times
+	fibo(4): 1 times
+	
+	We have overlapping subproblem (means a problem that appears multiple time during solution of another subproblem) such subproblem is solved multiple times which is wastage of CPU cycles and RAM.
+	
+	Solution using dynamic programming
+	
+	int fib[10];	//array that can contains 10 elements
+	fib[0] = 0;
+	fib[1] = 1;	//content in fib array will be : 0 1 1 2 3 5 8 0 0 0
+	
+	void getElement(int n){
+		if(n == 0 || fib[n] != 0){
+			//you are here means nth element of the fibonacci series is already computed
+			return fib[n];
+		}else{
+			//you are here means the nth element of fibinacci series is yet to compute
+			int start = n;
+			while(fib[start] == 0 && start != 2){
+				start = start - 1;
+			}
+			
+			while(start <= n){
+				fib[start] = fib[start - 1] + fib[start - 2];
+				start = start + 1;
+			}
+		}
+		return fibo[n];
+	}
+	
+	getElement(4)
+	n = 4
+	start = 4, 3, 2, 3, 4
+	
+	getElement(6)
+	n = 6
+	start = 6, 5, 6
+	
+	getElement(5)	
+	no need to compute value at index - 5 because it is already computed earlier. This is the advantage of dynamic programming that says no need to solve the same problem again and again. Solve it only once and keep the results save for future.
+	
+	Page: 19 PDF
+	A: 8 cups currently full
+	B: 5 cups currently empty
+	C: 3 cups currently empty
+	
+	Demand: A and B should have 4 cups of water each
+	
+	A->B (A:3 B:5)
+	B->C (A:3 B:2 C:3)
+	C->A (A:6 B:2 C:0)
+	B->C (A:6 B:0 C:2)
+	A->B (A:1 B:5 C:2)
+	B->C (A:1 B:4 C:3)
+	C->A (A:4 B:4 C:0)
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Algorithm
+- It is the first step in designing the program. An algorithm is a set of instructions written in simple english for solving a problem.
+- All steps in the algorithm are numbered
+- It describe basic technique of how to do a specific task. it takes input, process it according to a set of instructions, and generate output.
+- An algorithm must provide correct output for every possible input condition
+- An algorithm must have an definite end point so that when the input has been processed and the desired output is acheived, the process stops.
+- Characteristics of the algorithm
+  1. Clear and Unambiguous
+     - Algorithm should be clear and unambiguous. Each of its steps should be clear in all aspects and must leas to only one meaning.
+		 
+	2. Well Defined Inputs
+     - If a specification needs to take inputs, It should be well defined inputs.
+		 
+	3. Well Defined Outputs
+     - The algorithm must be finite i.e. it should not end up in an infinite loops or similar
+		 
+	4. Effectiveness
+     - Steps should be sufficiently simple and basic
+	
+	5. Finiteness
+     - Must terminate after a finite number of steps
+		 
+	Steps to develope algorithm
+	1. Identify the inputs and outputs
+	2. Identify any other data and constant required to solve the problem
+	3. identify what needs to be computed
+	4. Write an algorithm
+
+	Design pattern of the algorithm
+	a. Sequential Statement (exactly one time)
+  - All statements are guaranteed to be executed.
+  - No statement can execute for more than one time.
+  - The statements are executed in the order of there writing/placement.
+
+  An Example of algorithm: Write algorithm to add three numbers and find average
+  1. START
+  2. Take the three numbers and put them in variables num1, num2 and num3.
+  3. Declare an integer variable sum to store the resultant additions of the three numbers
+  4. Add the three numbers and store the result in variable sum
+  5. Create float variable average and put the sum/3 to variable average
+	6. Display the value of average
+  7. END
+	
+	An Example of algorithm: Write algorithm to find area of a rectangle
+	1. START
+  2. Take the dimension input and put them in variables length and breadth
+  3. Declare the variable area that will contains the multiplication of length and breadth
+  4. Display the value of area
+  5. END
+	
+	b. Selection Statement (Zero or one time)
+	- Execution of the statement is guaranteed to be executed at once
+	- No statement can be executed for more than one time but it can be skipped also
+	
+	An Example of algorithm: Write algorithm to check if person is adult or minor such that 18 years or more of age is for adult
+	1. START
+	2. Create variable age and take age input of use
+	3. If age >= 18
+	     then Print "Adult"
+		 Else
+		   then Print "Minor"
+	4. END
+	
+	An Example of algorithm: Write algorithm to print remark on the behalf of the percentage
+	percentage >= 60.00 A
+	percentage >= 33.00 B
+	percentage < 33.00 C
+	
+	1. START
+	2. Create variable percentage and take percentage input from user
+	3. If percentage >= 60.00
+	     then Print "A"
+		 Else If percentage >= 33.00
+		   then Print "B"
+		 Else
+		   then Print "C"
+	4. END
+	
+	c. Iteration statement/Looping statement (Zero or more times)
+	Write algorithm to print first 10 even numbers
+	1. START
+	2. Set start = 0
+	3. WHILE start <= 18
+			PRINT start
+			start = start + 2
+	4. END
+
+	start = 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 (F)
+	0 2 4 6 8 10 12 14 16 18
+	
+	Write an algorithm to find base raised to the power exponent
+	1. START
+	2. Take INPUT base AND exponent
+	3. SET count = 1, result = 1
+	4. REPEAT UNTIL count >= n
+			result = result * a;
+			count = count + 1;
+	5. PRINT result
+	6. END
+
+Pseudocode
+- A pseudocode is an algorithm expressed in a natural language rather than in a programming language.
+- Pseudocode, as the name suggests, is a false code or representation of code which can be understood by even a layman with some level programming knowledge
+- It is done in design phase
+- The benefit of pseudocode is that it enables the programmer to concentrate on the algorithms without worrying about all the syntactic details of a particular programming langauge.
+- Code migration is also easy with the help of pseudocode
+	
+An Example of pseudocode to add three numbers and find their average-
+Begin
+Int num1, num2, num3
+Int sum
+Print "Enter three numbers "
+Read num1, num2, num3
+Sum = num1 + num2 + num3
+Float average = sum/3.0
+Print average
+End
+
+An Example of pseudocode to find result of a student
+Begin
+Float percentage
+Print "Enter percentage "
+Read percentage
+if percentage >= 60.00 then
+  print "First Division"
+Else if percentage >= 45.00 then
+  print "Second Division"
+Else if percentage >= 33.00 then
+  print "Third Division"
+Else
+  print "Fail"
+End
+
+Write pseudocode to find a raise to the power b
+Begin
+Int base, expo, result, counter
+Set counter = result = 1
+Print "Enter base and exponential part "
+Read base, expo
+Repeat Until counter > expo then
+	Set result = result * base
+	Set counter = counter + 1
+Print result
+End
+
+Assignment (In class)
+WAP to calculate the total payablle bill amount as following (Algorithm + pseudocode)
+1. If total purchase is more than 1000/- then discount will be applicable as follow-
+   for women customer, the discount will be 3%
+	 for senior citizen (age >= 60 for men, age >= 58 for women) additional discount of 2%
+::case-1::
+Enter purchase amount: 1500
+Enter gender: F
+Enter age: 64
+Output
+the total payable bill is: 1425/-
+::case-2::
+Enter purchase amount: 1500
+Enter gender: M
+Enter age: 62
+Output
+the total payable bill is: 1470/-
+::case-3::
+Enter purchase amount: 1500
+Enter gender: F
+Enter age: 27
+Output
+the total payable bill is: 1455/-
+::case-4::
+Enter purchase amount: 1500
+Enter gender: M
+Enter age: 27
+Output
+the total payable bill is: 1500/-
+
+Algorithm
+1. START
+2. Create variable pa, gender, age, discount = 0
+3. Input pa, gender and age
+4. If pa >= 1000 then
+		If gender == 'F' then
+			discount = discount + 3;
+			If age >= 58 then
+				discount = discount + 2;
+		Else If age >= 60 then
+			discount = discount + 2;
+5. Print pa - pa * discount / 100;
+6. END
+
+Pseudocode
+BEGIN
+CREATE variables Float pa, Char gender, Int age, Int discount
+Read pa, gender, age
+If pa >= 1000
+	If gender == 'F'
+		discount = discount + 3
+		If age >= 58:
+			discount = discount + 2
+	Else if age >= 60
+		discount = discount + 2
+Print pa - pa * discount / 100;
+End
+
+Flow chart
+- It is graphical representation of an algorithm
+- Symbols and connector are used to indicate the flow of information
+- flowcharting: This is the process of writing the flowchart
+- Symbols used in the flow chart are-
+  a. Ellipse: Used to show start and stop of an algorithm
+	b. Rectangle: Used to show processing part
+	c. Parallelogram: Used to show input and output operation
+	d. Lines/Arrow Lines: indicate the flow of information. It may be labelled with "yes"/"no" in case of diamond 
+	e. Diamond: Used to contains the condition
+	f. Circle: Used as connector when flowchart spans more than one page
+
+Write flow chart to add three numbers and find average
+Ellipse: Start
+Parallelogram: take three numbers input in num1, num2 and num3
+Rectangle: Create variable sum
+Rectangle: sum = num1 + num2 + num3
+Rectangle: avg = sum / 3
+Parallelogram: Print avg
+Ellipse: End
+
+Write flow chart to check if person is adult or minor such that 18 years or more of age is for adult
+Ellipse: START
+Parallelogram: take age input of used
+Diamon If age >= 18
+		 Flow line with label Yes--- Parallelogram Print "Adult"
+		 Flow line with label No --- Parallelogram Print "Minor"
+Ellipse: END
+
+Write flow chart to print first 10 even numbers
+Ellipse: START
+Rectangle: start = 0
+Diamond: WHILE start <= 18
+	Flow line with label yes: Parallelogram: PRINT start
+	Flow line with label yes: Rectangle: start = start + 2
+Ellipse: END
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Data Structure
+- It is a way of storing the data such that data can be easily accessed and manipulated.
+- There are two types of data structures
+  1. Linear Data structure
+	   e.g. Array, Stack, LinkedList, Queue etc.
+	2. Nonlinear Data structure
+	   e.g. Tree and Graph
+
+1. Array (static data type)
+- Collection of similar data type stored in continous memory locations
+- It is used to create variables with same name but different indexes
+- The first element is available at index 0 and the last element is at index n - 1 where n is total number of elements
+- Array Supports random accessing i.e. any element of an array can be accessed directly (no need to start traversing from beginning)
+- Insertion and deletion operations are costly
+- Size of array is provides at the time of array creation and later on it cannot be changed
+- Syntax: data-type array-name[SIZE]
+
+e.g. int marks[5] = {24, 18, 28, 29, 7}	//array of 5 integer elements
+
+Assume that an integer occupy 4 bytes of memory so this array will occupy total 20 bytes of memory Say the starting memory address is 1000 so last address will be 1019
+  
+  |___24___|___18___|___28___|___29___|___7__|
+	marks[0]  marks[1] marks[2] marks[3] marks[4]
+	1000-03  1004-07  1008-11  1012-15  1016-19 <--- Memory address
+	
+	print marks[2];	//28
+	print marks[4];	//7
+	print marks[0];	//24
+	
+	Say we want to add element 21 at index-2
+	Case-1: When memory location 1020-23 is available
+	
+	|___24___|___18___|___21___|___28___|___29__|____7___|
+	marks[0]  marks[1] marks[2] marks[3] marks[4] marks[5]
+	1000-03  1004-07  1008-11  1012-15  1016-19  1020-23    <--- Memory address
+	
+	Case-2: When memory location 1020-23 is not available for free, we have to look for other memory location that will be able to accomodate the new array (that is of 6 elements) and we have to release the old memory locations of array
+
+	|___24___|___18___|___28___|___29__|____7___| (make this memory free)
+	marks[0]  marks[1] marks[2] marks[3] marks[4]
+	1000-03  1004-07  1008-11  1012-15  1016-19    <--- Memory address
+	
+	Create the array entirely at new memory locations
+	|___24___|___18___|___21___|___28___|___29__|____7___| (make this memory free)
+	marks[0]  marks[1] marks[2] marks[3] marks[4] marks[5]
+	2000-03  2004-07  2008-11  2012-15  2016-19  2020-23    <--- Memory address
+	
+	Say we want to delete the element 28 from the array then all elements to the RHS of the 28 has to be shifted left and then last element will be deleted
+	|___24___|___18___|___21___|___29___|___7___|
+	marks[0]  marks[1] marks[2] marks[3] marks[4]
+	1000-03  1004-07  1008-11  1012-15  1016-19    <--- Memory address
+
+2. Linked List (Dynamic data type)
+- Element of the linked list are not required to be in the continuous memory location
+- Every node of the linked list has 2 parts
+  * the data part that contains the data of the node
+	* the next part that contains the address of the next node
+- To point to the first node a special head pointer is available; if linked list is empty then it will have value null otherwise it will point the first node always
+- The next part of the last node of the linked list is null.
+- Only sequential accessing is supported means if we want to access 7th element of the list then we have to start from 1st element, access all 6 elements and then go to 7th element which is time consuming operation.
+- Insertion and deletion is very smooth because elements of the linked list are not required to be in the continous memory location so no shifting of existing elements is required
+- Size of linked list is not fixed, any number of nodes can be added and removed as per the demand
+- As compare to array, the linked list occupy more memory because it has data and next part both
+
+Say we have a linked list with 5 elements 24 28 21 29 7
+
+|_2458_|  |_24_|_7485_|  |_28_|_5826_|  |_21_|_2568_|  |_29_|_3852_|  |_7_|_NULL_|
+  head    data next      data next      data next      data next      data next
+	        2458           7485           5826           2568           3852
+
+Say you want to access element 29 then start from head that 2458 -> read the next part of 2458 that is 7485 -> read the next part of 7485 that is 5826 -> read the next part of 5826 that is 2568 -> value 29 is accessible
+
+Say you want to add the element 34 after 28 then simple it is-
+* Say the new node is created with content 34 and address of this node is 7498
+  |_34_|_    _|
+  7498
+* Write the next part of node 28 to the next part of new node that has content 34
+  |_34_|_5826_|
+  7498
+* Write the address of the new node that is 7498 to the next part of 28 so the linked list will be like-
+
+|_2458_|  |_24_|_7485_|  |_28_|_7498_|  |_34_|_5826_|  |_21_|_2568_|  |_29_|_3852_|  |_7_|_NULL_|
+  head    data next      data next      data next      data next      data next      data next
+	        2458           7485           7498           5826           2568           3852
+
+delete element 29 from the linked list then simple it is
+* Copy the next part of the 29 to the next part of the node that is pointing to 29
+|_2458_|  |_24_|_7485_|  |_28_|_7498_|  |_34_|_5826_|  |_21_|_3852_|  |_29_|_3852_|  |_7_|_NULL_|
+  head    data next      data next      data next      data next      data next      data next
+	        2458           7485           7498           5826           2568           3852
+* Set the next part of node 29 to null
+|_2458_|  |_24_|_7485_|  |_28_|_7498_|  |_34_|_5826_|  |_21_|_3852_|  |_29_|_NULL_|  |_7|_NULL_|
+  head    data next      data next      data next      data next      data next      data next
+	        2458           7485           7498           5826           2568           3852
+* make the node 29 free
+|_2458_|  |_24_|_7485_|  |_28_|_7498_|  |_34_|_5826_|  |_21_|_3852_|  |_7_|_NULL_|
+  head    data next      data next      data next      data next      data next
+	        2458           7485           7498           5826           3852
+
+3. Stack
+read from PDF
+
+- Say size of the stack is 5 [valid index will be from 0 to 4]
+- MaxTop = 4
+- Initially stack is empty so value of top = -1
+
+boolean empty(){
+	if(top == -1)
+		return true;
+	return false;
+}
+
+boolean full(){
+	if(top == maxTop)
+		return true;
+	return false;
+}
+
+void push(int value){
+	if(full()){
+		print "overflow"
+		return;
+	}
+	//you are here means stack is not full, add element
+	top = top + 1
+	stack[top] = value
+}
+
+int pop(){
+	if(empty()){
+		print "underflow"
+		return;
+	}
+	//you are here means stack is not empty, pop element
+	int value = stack[top];
+	top = top - 1;
+	return value;
+}
+
+int top(){	//this operation is also called peek operation
+	if(empty()){
+		print "underflow"
+		return;
+	}
+	return stack[top];
+}
+
+void displayStack(){
+	for(int i = 0; i <= top; i = i + 1){
+		print stack[top];
+	}
+}
+
+Applications of stack
+- used in function calling, recusrive function
+- used in the evaluation of expressions
+
+Example of stack in real life
+- Elevator
+- Dish holder
+
+Implementation technique
+1. Implemented Using Array: Size of stack is fixed, but this implementation is faster
+2. Implemented Using Linked list: Size of stack is dynamic but this implementation is slower
+
+4. Queue
+READ FROM PDF
+
+maxSize refer to the size of queue, if the size of queue is 5 then maxSize will be 5 but the valid indexes will be from 0 to 4
+
+boolean isEmpty(){
+	if(front == -1 and rear == -1)
+		return true;
+	return false;
+}
+
+boolean isfull(){
+	if(front == 0 and rear == maxSize - 1)
+		return true;
+	return false;
+}
+
+void enqueue(int value){
+	if(isFull()){
+		print "overflow";
+		return;
+	}
+	if(isEmpty()){
+		front = rear = 0;
+	}else{
+		rear = rear + 1;
+	}
+	queue[rear] = value;
+}
+
+int dequeue(){
+	if(isEmpty()){
+		print "underrflow";
+		return;
+	}
+	int value = queue[front];
+	if(front == rear){
+		front = rear = -1
+	}else{
+		front = front + 1;
+	}
+	return value;
+}
+
+void displayQueue(){
+	for(int i= front; i <= rear; i = i + 1){
+		print queue[i];
+	}
+}
+
+Execution
+Say size of queue is 5, maxSize = 5 valid index 0 - 4
+initially queue is empty so front = -1 and rear = -1
+
+Enqueue 10
+front = 0
+rear = 0
+10 <- element of queue
+0 <- index of queue
+
+Enqueue 7
+front = 0
+rear = 1
+10 7 <- element of queue
+0  1 <- index of queue
+
+Enqueue 85
+front = 0
+rear = 2
+10 7 85 <- element of queue
+0  1 2  <- index of queue
+
+Enqueue 74
+front = 0
+rear = 3
+10 7 85 74 <- element of queue
+0  1 2  3 <- index of queue
+
+Enqueue 16
+front = 0
+rear = 4
+10 7 85 74 16 <- element of queue
+0  1 2  3  4  <- index of queue
+
+Enqueue 1
+Overflow
+
+Dequeue
+front = 1
+rear = 4
+   7 85 74 16 <- element of queue
+0  1 2  3  4  <- index of queue
+
+Dequeue
+front = 2
+rear = 4
+     85 74 16 <- element of queue
+0  1 2  3  4  <- index of queue
+
+Dequeue
+front = 3
+rear = 4
+        74 16 <- element of queue
+0  1 2  3  4  <- index of queue
+
+Dequeue
+front = 4
+rear = 4
+           16 <- element of queue
+0  1 2  3  4  <- index of queue
+
+Dequeue
+front = -1
+rear = -1
+              <- element of queue
+0  1 2  3  4  <- index of queue
+
+Dequeue
+front = -1
+rear = -1
+Underflow
+
+Example of queue in real life
+- Lines at railway station/departmental stores/airports
+
+Implementation technique
+1. Implemented Using Array: Size of queue is fixed, but this implementation is faster
+2. Implemented Using Linked list: Size of queue is dynamic but this implementation is slower
+
+Applications of queue
+1. Scheduling of the processes
+2. Scheduling in routng algorithms also
+
+5. Tree (Non linear data structure)
+READ FROM PDF
+
+Binary Tree: The tree in which root/internal node can have maximum 2 children
+          A             <--- Level-0
+         / \
+        /   \
+       /     \
+      B       C         <--- Level-1
+     /\      /\
+    /  \    /  \
+	 D    E  F   G        <--- Level-2
+   /\
+  /  \
+  H  I                  <--- Level-3
+	Root Node: A
+	Inernal Nodes: B,C and D
+	Leaf Nodes: E, F, G, H and I
+	
+	Tree travesral order
+	1. Pre-order traversal
+	   Root-Left-Right
+		 A B D H I E C F G
+		 Tip: In Pre-order traversal the roor element will be traversed first
+	2. In-order traversal
+	   Left-Root-Right
+		 H D I B E A F C G
+	3. Post-order traversal
+	   Left-Right-Root
+		 H I D E B F G C A
+		 Tip: In Post-order traversal the root element will be traversed last
+	4. Level-order traversal
+	   Traverse the element level wise
+		 A B C D E F G H I
+		 
+	 Binary Search Tree
+	 - It is a binary tree such that
+	 - all elements on the LHS of root are smaller and
+	 - all elements on the RHS of root are larger and
+	 - Duplicate elements are not allowed
+	 
+	 10, 25, 17, 5, 7, 43, 2
+	 
+	          10
+					 /  \
+				 /      \
+			 /			    \
+			5 					25
+		 / \				 / \
+	 /		 \		 /     \
+	2			 7	  17     43
+	
+	height of the tree is: 2
+	levels of the tree is: 3 (0-2)
+	Complexity of search: O(log (base 2) N) where N is the total number of elements
+
+ Pre-Order: 10 5 2 7 25 17 43
+ In-Order: 2 5 7 10 17 25 43
+ Tip: For BST the inorder traveral will always give you sorted sequence
+ Post-Order: 2 7 5 17 43 25 10
+ Level Order: 10 5 25 2 7 17 43
+ 
+ 10, 15, 25, 48, 69
+ 
+  10
+	 \
+	 15
+	  \
+		25
+		 \
+		 48
+		  \
+			69
+			
+	height of the tree is: 4
+	levels of the tree is: 4 (0-3)
+	Complexity of search: O(N) where N is the total number of elements
+	
+	The above tree is right skewed tree that will have huge performance setback because normally tree have logrithmic complexity of accessing for binary tree but the right skewed tree show linear complexity. 
+	
+	Solution : Use AVL Tree, it always keep the tree height balanaced
+	10 15 25 48 69
+	Balance factor: Height of left subtree - Height of right subtree
+	If balance factor is [0, 1, -1] then okay... if anything elsethan readjustment is required
+	
+	10 (0)
+	  (a)
+	
+	10 (-1)
+	 \
+	 15 (0)
+	  (b)
+	
+	10 (-2)
+	 \
+	 15 (-1)
+	  \
+		25 (0)
+	  (c)
+		
+	   15 (0)
+	  / \
+	 /   \
+	/     \
+ 10(0)  25(0)
+    (d)
+		
+	  15 (-2)
+	 / \
+	/   \
+ 10(0)  25(-2)
+         \
+				  \
+					48 (-1)
+					 \
+					  \
+						69(0)
+    (e)
+
+	  15 (-1)
+	 / \
+	/   \
+ 10(0)  48(0)
+        /\
+			 /  \
+			/    \
+		25(0)	 69(0)
+    (f)
+
+6. Graph (Non Linear Data Structure)
+READ FROM PDF
+
+Q.1 Which Sorting algorithm has minimum worst case complexity.
+A. Insertion Sort
+B. Bubble Sort
+C. Quick Sort
+D. Merge Sort
+
+Q.2 How many comparisons does the binary search require to search element 49 in the list 41, 43, 45, 47, 48, 49
+A. 3
+B. 4
+C. 5
+D. None of these
+
+Q.3 Which of the following problem solving technique uses memorization?
+A. Heurisitic Approach
+B. Divide and conquer
+C. Greedy Algorithm
+D. Dynamic Programming
+
+Q.4 Match the following
+(i) Stack           (a) FIFO
+(ii) Queue          (b) The node has data and next part both
+(iii) Linked List   (c) Allow random access of elements
+(iv) Array          (d) LIFO
+
+A. (i)-(d) (ii)-(a) (iii)-(b) (iv)-(c)
+B. (i)-(a) (ii)-(b) (iii)-(c) (iv)-(d)
+C. (i)-(a) (ii)-(d) (iii)-(a) (iv)-(c)
+D. (i)-(d) (ii)-(c) (iii)-(b) (iv)-(a)
+
+Q.5 Find the odd one-
+A. Queue
+B. Array
+C. Tree
+D. Linked List
+
+Q.6 The pictorial (Diagramatic) presentation of a algorithm
+A. flowchart
+B. pseudocode
+C. code
+D. none of these
+
+A.1 RIGHT ANSWER: (D)
+A.2 RIGHT ANSWER: (A)
+A.3 RIGHT ANSWER: (D)
+A.4 RIGHT ANSWER: (A)
+A.5 RIGHT ANSWER: (C)
+A.6 RIGHT ANSWER: (A)
