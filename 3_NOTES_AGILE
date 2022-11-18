@@ -1,0 +1,191 @@
++-+-+-+-+-+-+-
+| 30-08-2022 |
+|    AGILE   |
++-+-+-+-+-+-+-
+
+SDLC (Software Development Life Cycle)
+- It is a process used by the software industry to design, develop and test high quality software
+- The aim of SDLC is
+  * Meeting of exceeding the customer expectation
+	* Reaching completion within dealines
+	* Reaching completion within cost estimation
+
+The SDLC lifecycle has following phases
+1. Requirement Analysis
+2. Design
+3. Implementation
+4. Testing
+5. Evolution
+
+https://www.youtube.com/watch?v=i-QyW8D3ei0
+
+Types of SDLC Models
+1. Waterfall Model
+- The software development is in the linear sequential flow i.e. means the any phase of the software development begins only when the previous phase is completed
+- The phase are 
+  * Requirement Analysis
+	* System Design
+	* Implementation
+	* System Testing
+	* System Depployment
+	* System Maintenance
+- If System Design phase is under development then you cannot go back to the Requirement Analysis phase and to go to the implementation phase one has to complete System Design phase. It is very much like once wafer falls from some high point to low point then it cannot go back to high point again.
+- This nature makes the waterfall model very rigid so it is not suitable for large and time consuming projects.
+- Apart from this client interaction is in the requirement analysis phase then it is in the system deployment phase so the point is client interaction is very limited so may be possible that the expected product and delivered product they may completely mismatch.
+- Integrating the changing requirements are also difficult.
+
+2. Iterative and Incremental Model (See slide#9)
+- The product is designed, implemented and test incrementally with little more is added each time
+- The above step is done until product is finshed.
+
+Comparison between waterfall and iterative Model
+1. use waterfall model when requirement is clearly defined; If requirement is kept changing then use iterative and Incremental model
+2. In water model, customer evaluation takes place in the final phase; In Iterative and Incremental model, product is developed in small phases so client is able to review the product before going to final phase.
+3. In waterfall model; The human resource is dependent on the requirements of clients but in Incremental and Iterative model less human resource is required when increments are small
+4. In waterfall model, the project failure risk is high but for Incremental and Iterative model; the project failure risk is definitely low.
+
+3. Spiral Model (See slide#11)
+- It is risk driven software development model.
+- Based on the unique risk patterns of a given project, the sprial model guides a team to adopt of one or more process models.
+- Development is done in multiple interations
+- Each iteration has-
+  * Detemine objective
+	* Identify and resolve risks
+	* Development and test
+	* Plan the next iteration
+
+- Advantages of Spiral model
+  1. Changing requirements can be accomodate
+	2. Requirement can be captured more accurately
+	3. Development can be divided into smaller parts and more risky parts can be developed earlier which helps in better risk management
+	4. Users see thge system early
+	5. Allow for extensive use of prototype
+
+- Disadvantages of Spiral model
+  1. Management is more complex
+	2. process is complex
+	3. Large number of intermediate stages require excessive documentation
+	4. End project may not be known early
+	5. Spiral may go indefinitely 
+
+4. V Model
+- It is extension of the waterfall model and is based on the association of a testing phase for each corresponding development stage.
+- This means that for every single phase in the development sycle, there is a directly associated testing phase.
+- Advantages of V model
+  1. Easy to understand and use
+  2. Each phase has some definite deliverables
+	3. High possibility of achivement over waterfall model due to the development of test plans early on during the life cycle
+	4. Works well for the small project where obligations are simply understood
+
+5. Agile Model
+- All the phase like analysis, design, development, testing all is going parallaly and development is done in multiple phase such that the client interaction is more and changing demand can be integrated easily.
+- Agile model focus on small release in every 2 weeks (approx) so that client can review the product and suggest the changes. In case of waterfall model; one big release is provided at the last.
+- Advantegs of agile
+  - Better Adaptability (to the changing requirements)
+	- Better project visibility
+	- Better productivity of developers
+	- More time to market the product
+	- All the team member are working together because all phases are overlapping in agile
+	- cost of chage in the agile model is much lower than the traditional models.
+	- In agile model, scope can be extended for same time limit and cost due to better management but in traditional methodology scope is fixed but due to complex management approach time and cost used to increase.
+- Agile focus on Responding to changes rather than following a plan like in traditional methodologies
+- Agile focus on Customer Collboration rather than Contract Negotiation like in traditional methodologies
+- Agile focus on Working software rather than comprehensive documentation like in traditional methodologies
+- Agile model focus on individuals and interaction rather than process and tools
+
+Agile model follows MoSCoW prioritization scheme
+M: Must have requirement
+S: Should have requirement
+C: Could have requirement
+W: Won't have requirement
+
+Many ways are there to implement agile like Scrum, eXtreme programming, Kanban, Crystal etc. Scrum is most polular way to implement the Agile methodology.
+
+Scrum (3 roles + 4 Ceremonies + 3 Artifacts)
+  Roles in Scrum
+  1. Product Owner (Responsible for interaction with the client, It gathers all the requirements, may or may be technical)
+  2. Scrum Master (Technical Person who will make the team to implememnt the requirements so to keep the team focussed on the goal
+  3. Team: Member os team with various roles
+
+  Ceremonies in Scrum
+  Scrum projects make progress in a series of sprints. An iteration of work during which an increment of product functionality is implemented. Product is designed, coded ans tested during an Sprint. Typical suration is 2-4 weeks or a calndar month at most. During a print changes are not allowed. 
+
+  1. Sprint Planning
+     Team select starting at top as much as it can commit to deliver by end of sprint. Team is giving time estimation for each tasks.
+	  
+  2. Sprint Review
+     What team has done in the Sprint. It includes demosntraing the new feature of the Sprint. It involves team as well as external people can be invited to see the sprint work.
+	 
+  3. Sprint Retrospective
+     It takes place after the Sprint Review meeting.
+	   Team assesses the way they workded together in sprint and identifies the positive ways; They are also finding the area of improvement
+	   Whole team (Prodcut Owner, Scrum Master and team is participating along with customer and others)
+	 
+  4. Daily Scrum Meeting
+     In every 24 hours a Daily scrum Meeting takes place such that team assess their performance and discuss on how to proceed with current sprint backlog. In this meeting product owner, scrum master and team members are participating evryone is just answering the three questions
+	   1. What did i do yestrday?
+	   2. What will i do today?
+	   3. Any impedence is there?
+	 
+	   Additional: Sprint can be terminated by the team if the cannot meet the goal; if the priority changes; 
+	
+  Artifacts
+  1. Prodcut Backlog
+     - Contains all requirements
+     - It is prioritized wish list of the client.
+     - used by team to estimate the cost of product so team is also participating in the same.
+     - It should contains all features and technical requirements
+     - Around ten-developee-days of work is good size of a product backlog that can be ready in the next iteration.
+
+  2. Sprint Backlog
+     - Part of the Product backlog that has to be implememnted by team in next 15 days the product backlog is broken down into Sprint backlogs
+     - When sprint backlog is completed, then total work estimate is compared with the original time taken; if significant difference then team negotiates with the product owner to get right amount of time to work
+
+  3. Burn-down Charts
+     - Show the cumulative work remaining in a sprint; day by day
+     - Used as a tool to guide the development team to successful completion of a sprint on time with working code that is shippable as product.
+
+
+Story point
+Traditional software teams give estimates in a time format: days, weeks, months. Many agile teams, however, have transitioned to story points. Story points are units of measure for expressing an estimate of the overall effort required to fully implement a product backlog item or any other piece of work. Teams assign story points relative to work complexity, the amount of work, and risk or uncertainty. Values are assigned to more effectively break down work into smaller pieces, so they can address uncertainty. Over time, this helps teams understand how much they can achieve in a period of time and builds consensus and commitment to the solution. 
+
+For each story in an iteration the team will-
+1. Ask any clarifying questions
+2. Break the work to complete the story into tasks using a very simple scale 0.5, 1, 1.5 or 2 days are allowable task duration
+3. The task list must be everything required to make the story be "Done"
+- For each story, a number representing task days per size point is calculated
+  e.g. If a story is a size 3 and the task estimates add to 4 days then number calculated would be 4/3 that is 1.33
+- After all stories have the number calculated, any story with a number that is not near the average is re-examined
+  * Does the story need to be resized?
+	* Did we forget some task?
+	* Is it just rounding error and it is okay?
+	
+Velocity: it is the amount of work a team can accomplish in a given time period.
+The typical team size is  5 to 9 person. The factors of scaling are
+a. Type of application
+b. Team size
+c. Team dispersion
+d. Project Duration
+
+Trello: READ FROM PDF
+
+Q.1 Sam was assigned task to implement agile methodology in his project, under agile methodology he decided to use srcum project. Help him to get clarity on scrum practice from below list
+A. 3 roles 4 practices 3 tools
+B. 7 principles 8 wastes 22 thinking tools
+C. 5 values 12 primary practices 11 corollary practices
+D. 3 roles 4 ceremonies 3 artifacts
+
+Q.2 Which of the following document help the scrum master to assess the pendencies of the existing sprint
+A. Product backlog
+B. Spring backlog
+C. Burndown chart
+D. None of these
+
+Q.3 Agile model follows _________ prioritization scheme
+Q.4 _________ is the amount of work a team can accomplish in a given time period.
+
+A.1 RIGHT ANSWER: (D)
+A.2 RIGHT ANSWER: (C)
+A.3 MoScoW
+A.4 Velocity
+----------------
