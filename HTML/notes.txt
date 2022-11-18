@@ -1,0 +1,3 @@
+<pre></pre>  - pre formatted tag used to follow same format of the text in between the tag
+
+&copy - used to put copyright symbol
